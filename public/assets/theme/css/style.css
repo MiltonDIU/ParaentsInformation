@@ -1,0 +1,820 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+/* ----------------------- Navbar start ----------------------- */
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #fafafa;
+}
+
+.navbar .nav-container {
+    justify-content: center;
+}
+
+.navbar .navbar-brand img {
+    width: 200px;
+    height: auto;
+}
+
+/* ----------------------- Common CSS Start ----------------------- */
+.mg_top {
+    margin-top: 120px;
+}
+
+.heading_one {
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.heading_two {
+    font-family: "Poppins", sans-serif;
+    font-size: 38px;
+    color: #333333;
+    text-transform: uppercase;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.heading_three {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    color: #000;
+    text-transform: capitalize;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.paragraph {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #333;
+}
+
+.white_text {
+    color: #fff;
+}
+
+.regular_btn {
+    background: #2E3094;
+    border: 1px solid #2E3094;
+    color: #fff;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.regular_btn:hover {
+    border-color: #FFBC42;
+    color: #FFBC42;
+    background-color: transparent;
+}
+
+.d_center {
+    margin: 0 auto;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.hover_text {
+    color: #000;
+    transition: all linear .2s;
+}
+
+.hover_text:hover {
+    color: #FFBC42;
+}
+
+.mb-1 {
+    margin-bottom: 16px !important;
+}
+
+.mb-2 {
+    margin-bottom: 24px !important;
+}
+
+.mb-3 {
+    margin-bottom: 35px !important;
+}
+
+.mb-4 {
+    margin-bottom: 42px !important;
+}
+
+.resource_details {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    padding-right: 60px;
+    padding-left: 114px;
+}
+
+.resource_details_right {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 114px;
+}
+
+.resource_links {
+    margin-right: 80px;
+}
+
+.resource_links li {
+    border-bottom: 1px solid #DEE2E6;
+    padding-top: 19px;
+    padding-bottom: 12px;
+}
+
+.resource_links li:last-child {
+    border-bottom: none;
+}
+
+.resource_links li a {
+    color: #333333;
+    transition: all linear .2s;
+}
+
+.resource_links li a:hover {
+    color: #FFBC42;
+}
+
+.resource_img {
+    height: 100%;
+}
+
+.resource_img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.container-fluid {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.cart_main {
+    background-color: #FAFAFA;
+    border-radius: 4px;
+    margin-bottom: 50px;
+}
+
+.cart_main .cart_img {
+    height: 275px;
+}
+
+.cart_main .cart_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cart_details {
+    padding: 24px;
+}
+/* ----------------------- Common CSS end ----------------------- */
+
+/* ----------------------- Navbar end ----------------------- */
+
+/* ----------------------- main carousel start ----------------------- */
+#main_carousel {
+    position: relative;
+}
+
+#main_carousel .carousel_text {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 150px;
+    padding-bottom: 50px;
+}
+
+.big_btn {
+    padding: 14px 24px;
+    margin-top: 16px;
+}
+
+#main_carousel .item {
+    height: 600px;
+    width: 100%;
+}
+
+#main_carousel .item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #0d1128;
+    background: -moz-linear-gradient(45deg, #0d1128 0%, #ffbc42 100%);
+    background: -webkit-linear-gradient(45deg, #0d1128 0%, #ffbc42 100%);
+    background: -o-linear-gradient(45deg, #0d1128 0%, #ffbc42 100%);
+    background: -ms-linear-gradient(45deg, #0d1128 0%, #ffbc42 100%);
+    background: linear-gradient(45deg, #0d1128 0%, #ffbc42 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0d1128', endColorstr='#FFBC42', GradientType=1);
+    opacity: 0.5;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    background: #FFBC42;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #fff;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(.97, .98);
+    }
+      
+    100% {
+        transform: scale(1, 1);
+    }
+}
+/* ----------------------- main carousel end ----------------------- */
+
+/* ----------------------- index part start ----------------------- */
+#index-part {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#index-part .big_btn {
+    margin-top: 60px;
+}
+/* ----------------------- index part end ----------------------- */
+
+/* ----------------------- announcement part start ----------------------- */
+#announcement_part {
+    background-color: #FAFAFA;
+}
+/* ----------------------- announcement part end ----------------------- */
+
+/* ----------------------- get updates start ----------------------- */
+#get_updeates {
+    margin-top: 70px;
+    background-color: #FAFAFA;
+}
+/* ----------------------- get updates end ----------------------- */
+
+/* ----------------------- events part start ----------------------- */
+#events_part {
+    background-color: #FAFAFA;
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+
+#events_part .cart_main {
+    background-color: #fff;
+}
+
+.event_img {
+    position: relative;
+}
+
+.event_date {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #2E3094;
+    padding: 8px;
+    text-align: center;
+    color: #fff;
+}
+
+.event_date .day {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.event_date .month-year {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+/* ----------------------- events part end ----------------------- */
+
+/* ----------------------- career part start ----------------------- */
+#career_part {
+    background-color: #FAFAFA;
+}
+/* ----------------------- career part end ----------------------- */
+
+/* ----------------------- life part start ----------------------- */
+#life_part {
+    background-color: #FAFAFA;
+}
+/* ----------------------- life part end ----------------------- */
+
+/* ----------------------- footer start ----------------------- */
+#return-to-top {
+	opacity: 1;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	background: #2E3094;
+	width: 50px;
+	height: 50px;
+	display: block;
+	text-decoration: none;
+	border-radius: 4px;
+	display: none;
+	z-index: 100000;
+	text-align: center;
+}
+
+#return-to-top i {
+	color: #fff;
+	font-size: 32px;
+	line-height: 47px;
+}
+
+#return-to-top:hover {
+    background-color: #333;
+}
+
+footer {
+    background-color: #232323;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.footer_after_login {
+    margin-top: 0;
+}
+
+.footer_text {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #fff;
+    padding: 32px 0;
+}
+/* ----------------------- footer end ----------------------- */
+
+/* ----------------------- preloader start ----------------------- */
+#preloader {
+    background: #fff url(../images/loader.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+}
+/* ----------------------- preloader end ----------------------- */
+
+/* ========================== Sign page start ========================== */
+.sign_img {
+    padding-right: 30px;
+}
+
+.form_groups {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_group {
+    width: 46%;
+}
+
+.full_width {
+    width: 100%;
+}
+
+.input_field {
+	width: 100%;
+	height: 50px;
+	padding: 10px;
+	border-radius: 4px;
+	border: 1px solid #DEE2E6;
+}
+
+.sign_img {
+    height: 795px;
+}
+
+.sign_in_img {
+    height: 685px;
+}
+
+.sign_img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.sign_input_text {
+    display: block;
+}
+
+.submit_btn {
+    padding: 6px 16px;
+}
+
+.s_text {
+    font-weight: 600;
+    color: #2E3094;
+    margin-left: 5px;
+    transition: all linear .2s;
+}
+
+.s_text:hover {
+    color: #FFBC42;
+}
+
+.f_text {
+    font-weight: 600;
+    color: #FFBC42;
+    transition: all linear .2s;
+}
+
+.f_text:hover {
+    color: #2E3094;
+}
+
+.ahead_text {
+    margin-top: 70px;
+}
+
+.text_bold {
+    font-weight: 600;
+}
+
+.a_text {
+    margin: 15px 0;
+}
+
+/* ========================== Sign page end ========================== */
+
+/* ========================== welcome start ========================== */
+#welcome {
+    margin-top: 100px;
+}
+
+.welcome_main {
+    background-color: #FAFAFA;
+    padding: 35px;
+    border-radius: 4px;
+}
+
+.c_text {
+    font-weight: 500;
+    margin-left: 10px;
+}
+.mb-l {
+    margin-left: 29px;
+}
+/* ========================== welcome end ========================== */
+
+/* ========================== forgot password start ========================== */
+#forgot_password {
+    margin-top: 100px;
+}
+
+.forgot_password_main {
+    background-color: #FAFAFA;
+    padding: 35px;
+    border-radius: 4px;
+}
+
+.m_group {
+    margin: 0 90px;
+}
+/* ========================== forgot password end ========================== */
+
+/* ========================== Newsfeed start ========================== */
+.navbar-expand-lg .navbar-nav .nav-link {
+    font-family: "Poppins", Arial, sans-serif;
+	color: #232323 !important;
+	font-size: 17px;
+    font-weight: 400;
+	padding-right: 0;
+	padding-left: 32px;
+    transition: all linear .2s;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: #FFBC42 !important;
+}
+
+.dropdown-item {
+    font-family: "Poppins", Arial, sans-serif;
+	color: #232323;
+	font-size: 15px;
+    font-weight: 400;
+    padding: 8px 22px;
+    transition: all linear .1s;
+}
+
+.dropdown-item i {
+    margin-right: 15px;
+}
+
+.dropdown-toggle::after {
+	display: none;
+}
+
+.nav-link i {
+    font-size: 19px;
+}
+
+.dropdown-menu[data-bs-popper] {
+	left: -84px;
+}
+
+.dropdown-menu::after {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f0d8";
+	position: absolute;
+	top: -20px;
+	right: 27px;
+	font-size: 21px;
+	color: #232323;
+}
+
+.dropdown-item:focus, 
+.dropdown-item:hover {
+	color: #fff;
+	background-color: #2E3094;
+}
+
+#newsfeed {
+    padding-top: 80px;
+    padding-bottom: 120px;
+    background-color: #FAFAFA;
+}
+
+.background_radius {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.top_news_img {
+    height: 185px;
+}
+
+.top_news_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.top_news_details {
+    margin-top: 20px;
+}
+
+.news_feed_text {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #333;
+}
+
+.orange_text {
+    color: #FFBC42;
+}
+
+.link_space {
+    margin: 10px 0;
+}
+
+.article_main {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.article_img {
+    height: 330px;
+}
+
+.article_img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.read_more_text {
+    color: #2E3094;
+    transition: all linear .2s;
+}
+
+.read_more_text:hover {
+    color: #FFBC42;
+}
+
+.calender_box {
+    display: flex;
+    align-items: center;
+}
+
+.date {
+    background-color: #2E3094;
+    padding: 8px;
+    text-align: center;
+    color: #fff;
+    width: 51px;
+}
+
+.event_title {
+    padding-left: 16px;
+}
+
+.c_event_icon {
+    background-color: #FFBC42;
+    padding: 8px;
+    text-align: center;
+    color: #fff;
+    width: 51px;
+}
+
+.c_event_icon i {
+    font-size: 30px;
+}
+/* ========================== Newsfeed end ========================== */
+
+/* ========================== edit profile start ========================== */
+
+#edit_profile_main {
+    padding-top: 80px;
+    padding-bottom: 120px;
+    background-color: #FAFAFA;
+}
+
+#edit_profile_main .nav-link {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    text-align: left;
+    padding: 14px 18px;
+    color: #333333;
+}
+
+#edit_profile_tab {
+    border-radius: 4px 4px 0 0;
+}
+
+#reset_password_tab {
+    border-radius: 0 0 4px 4px;
+}
+
+#edit_profile_main .nav-link i {
+    margin-right: 16px;
+}
+
+#edit_profile_main .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+	background-color: #2E3094;
+    color: #fff;
+}
+
+#edit_profile_main .nav-pills {
+    border: 1px solid #2E3094;
+    border-radius: 6px;
+}
+
+.edit_input_text {
+    margin-right: 16px;
+}
+
+.edit_input_field {
+    width: 70%;
+	height: 50px;
+	padding: 10px;
+	border-radius: 4px;
+	border: 1px solid #DEE2E6;
+}
+
+.edit_input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit_input_text span {
+    font-size: 12px;
+    color: #707070;
+}
+
+.cancel_btn {
+    background-color: #fff;
+    border-color: #2E3094;
+    color: #2E3094;
+    margin-left: 16px;
+}
+
+.password_field {
+    width: 60%;
+}
+
+/* ========================== Index part start ========================== */
+
+#index_part {
+    padding-top: 80px;
+}
+
+#index_part .nav {
+    justify-content: center;
+}
+
+#index_part .nav-link {
+    padding: 5px 14px;
+}
+
+#index_part .nav-pills .nav-link.active, 
+#index_part .nav-pills .show > .nav-link {
+	color: #fff;
+	background-color: #2E3094;
+}
+
+#index_part .nav-link:focus, 
+#index_part .nav-link:hover {
+	color: #FFBC42;
+}
+
+.tab-content ul li {
+    margin: 15px 0;
+}
+
+.tab-content ul li a {
+    color: #2E3094;
+    transition: all linear .2s;
+}
+
+.tab-content ul li a:hover {
+    color: #FFBC42;
+}
+
+.no_content {
+    min-height: 100vh;
+}
+/* ========================== Index part end ========================== */

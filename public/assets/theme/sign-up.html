@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DIU Parents Information Page</title>
+        <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/aos.css">
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        <!-- ----------------------- preloader start ----------------------- -->
+        <div id="preloader"></div>
+        <!-- ----------------------- preloader end ----------------------- -->
+
+        <!-- ----------------------- Navbar start ----------------------- -->
+        <nav class="navbar sticky-top">
+            <div class="container nav-container">
+                <a class="navbar-brand" href="parents-information.html">
+                    <img src="images/Parents Experience Logo.png" alt="DIU Parents Experience">
+                </a>
+            </div>
+        </nav>
+        <!-- ----------------------- Navbar end ----------------------- -->
+
+        <!-- ----------------------- sign up start ----------------------- -->
+        <section id="sign_up" class="mg_top">
+            <div class="container">
+                <div class="row column_change">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="sign_img">
+                            <img src="images/sign-up.jpg" alt="Sign up">
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <form action="">
+                            <div class="sign_form">
+                                <h1 class="heading_two mb-3">DIU Parent Portal</h1>
+
+                                <div class="form_groups">
+                                    <div class="input_group">
+                                        <label for="firstName" class="paragraph sign_input_text mb-1">First Name</label>
+                                        <input type="text" id="firstName" class="input_field mb-2">
+                                    </div>
+
+                                    <div class="input_group">
+                                        <label for="lastName" class="paragraph sign_input_text mb-1">Last Name</label>
+                                        <input type="text" id="lastName" class="input_field mb-2">
+                                    </div>
+                                </div>
+
+                                <div class="form_groups">
+                                    <div class="input_group full_width">
+                                        <label for="email" class="paragraph sign_input_text mb-1">Email Address</label>
+                                        <input type="email" id="email" class="input_field mb-2">
+                                    </div>
+                                </div>
+
+                                <div class="form_groups">
+                                    <div class="input_group">
+                                        <label for="password" class="paragraph sign_input_text mb-1">Password</label>
+                                        <input type="password" id="password" class="input_field mb-2">
+                                    </div>
+
+                                    <div class="input_group">
+                                        <label for="confirmPassword" class="paragraph sign_input_text mb-1">Confirm Password</label>
+                                        <input type="password" id="confirmPassword" class="input_field mb-3">
+                                    </div>
+                                </div>
+
+                                <div class="form_groups">
+                                    <div class="input_group">
+                                        <input type="submit" value="Sign Up" class="btn btn regular_btn submit_btn mb-3">
+                                    </div>
+                                </div>
+
+                                <p class="paragraph mb-2">Already have an account? <span><a href="sign-in.html" class="s_text">Sign in</a></span></p>
+                            </div>
+                        </form>
+
+                        <div class="ahead_text">
+                            <p class="paragraph text_bold a_text">You are one step ahead for:
+                            </p>
+
+                            <ul>
+                                <li class="paragraph a_text">- Getting access to our campus updates and important news</li>
+                                <li class="paragraph a_text">- Having insights into your student’s progress and financial records</li>
+                                <li class="paragraph a_text">- Receiving our monthly e-newsletter</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ----------------------- sign up end ----------------------- -->
+
+        <!-- ----------------------- footer start ----------------------- -->
+        <footer>
+            <!-- ------------------------------ Return to Top start ------------------------------ -->
+                <a href="javascript:" id="return-to-top">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            <!-- ------------------------------ Return to Top end ------------------------------ -->
+            <div class="container">
+                <p class="footer_text">Copyright © 2022 Daffodil International University. All Rights Reserved.</p>
+            </div>
+        </footer>
+        <!-- ----------------------- footer end ----------------------- -->
+
+
+        <script src="js/jquery-1.12.4.min.js"></script>
+
+        <script>
+            // ===== Return to Top ====
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 200px
+                    $('#return-to-top').fadeIn(200);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+                }
+            });
+
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

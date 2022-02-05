@@ -1,0 +1,418 @@
+/*  ---------------------- X-Small Device Start ----------------------  */
+@media (min-width: 320px) and (max-width: 575px){
+    /* Home Page start */
+    #main_carousel .carousel_text {
+        margin-top: 60px;
+    }
+
+    .heading_two {
+        font-size: 34px;
+    }
+
+    .resource_details {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .resource_details_right {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .column_change {
+        flex-direction: column-reverse;
+    }
+
+    #utilities_part {
+        margin-top: 60px;
+    }
+
+    #events_part {
+        margin-top: 60px;
+    }
+
+    #office_part {
+        margin-top: 40px;
+    }
+
+    #staying_well {
+        margin-top: 40px;
+    }
+    /* Home Page end */
+
+    /* Sign up Page start */
+    #sign_up {
+        margin-top: 60px;
+    }
+
+    .form_groups {
+        display: block;
+    }
+
+    .input_group {
+        width: 100%;
+    }
+
+    .sign_img {
+        padding-right: 0;
+        margin-top: 50px;
+    }
+    /* Sign up Page end */
+
+    /* Sign in Page start */
+    #sign_in {
+        margin-top: 60px;
+    }
+    /* Sign in Page end */
+
+    /* Forgot password Page start */
+    #forgot_password {
+        margin-top: 60px;
+    }
+
+    .forgot_password_main {
+        padding: 35px 15px;
+    }
+
+    #forgot_password .m_group {
+        margin: 0;
+    }
+
+    #forgot_password .s_text {
+        margin-left: 0;
+    }
+
+    #forgot_password .input_group {
+        margin-bottom: 30px;
+    }
+    /* Forgot password Page end */
+
+    /* Welcome Page start */
+    #welcome {
+        margin-top: 60px;
+    }
+
+    .welcome_main {
+        padding: 15px 5px;
+    }
+    /* Welcome Page end */
+
+    /* Newsfeed Page start */
+    .navbar .after_login img {
+        width: 145px;
+    }
+
+    #navbarSupportedContent {
+        background-color: #2E3094;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        color: #fff !important;
+        padding-right: 20px;
+        padding-left: 0;
+        text-align: right;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .dropdown-menu::after {
+        top: 39px;
+        right: 23px;
+        color: #fff;
+    }
+
+    .dropdown-item {
+        text-align: right;
+    }
+    /* Newsfeed Page end */
+
+    /* Edit-profile Page start */
+    #edit_profile_main {
+        padding-top: 45px;
+    }
+
+    #edit_profile_main .align-items-start {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    #edit_profile_main .edit_input {
+        display: block;
+    }
+
+    #edit_profile_main .edit_input_field {
+        width: 100%;
+    }
+
+    #edit_profile_main .edit_input_text {
+        margin-bottom: 16px;
+    }
+    /* Edit-profile Page end */
+}
+
+/*  ---------------------- X-Small Device end ----------------------  */
+
+/*  ---------------------- Small Device Start ----------------------  */
+
+@media (min-width: 576px) and (max-width: 767px){
+    /* Home Page start */
+    .resource_details_right {
+        padding-right: 60px;
+    }
+
+    .resource_details {
+        padding-left: 60px;
+    }
+
+    .column_change {
+        flex-direction: column-reverse;
+    }
+
+    #utilities_part {
+        margin-top: 70px;
+    }
+
+    #events_part {
+        margin-top: 70px;
+    }
+
+    #office_part {
+        margin-top: 60px;
+    }
+
+    #staying_well {
+        margin-top: 60px;
+    }
+    /* Home Page end */
+
+    /* Sign up Page start */
+    #sign_up {
+        margin-top: 60px;
+    }
+
+    .form_groups {
+        display: block;
+    }
+
+    .input_group {
+        width: 100%;
+    }
+
+    .sign_img {
+        padding-right: 0;
+        margin-top: 50px;
+    }
+    /* Sign up Page end */
+
+    /* Sign in Page start */
+    #sign_in {
+        margin-top: 60px;
+    }
+    /* Sign in Page end */
+
+    /* Forgot password Page start */
+    #forgot_password {
+        margin-top: 60px;
+    }
+
+    .forgot_password_main {
+        padding: 35px;
+    }
+
+    #forgot_password .m_group {
+        margin: 0;
+    }
+
+    #forgot_password .s_text {
+        margin-left: 0;
+    }
+
+    #forgot_password .input_group {
+        margin-bottom: 30px;
+    }
+    /* Forgot password Page end */
+
+    /* Newsfeed Page start */
+    .navbar .after_login img {
+        width: 145px;
+    }
+
+    #navbarSupportedContent {
+        background-color: #2E3094;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        color: #fff !important;
+        padding-right: 20px;
+        padding-left: 0;
+        text-align: right;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .dropdown-menu::after {
+        top: 39px;
+        right: 23px;
+        color: #fff;
+    }
+
+    .dropdown-item {
+        text-align: right;
+    }
+    /* Newsfeed Page end */
+
+    /* Edit-profile Page start */
+    #edit_profile_main {
+        padding-top: 45px;
+    }
+
+    #edit_profile_main .align-items-start {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    #edit_profile_main .edit_input {
+        display: block;
+    }
+
+    #edit_profile_main .edit_input_field {
+        width: 100%;
+    }
+
+    #edit_profile_main .edit_input_text {
+        margin-bottom: 16px;
+    }
+    /* Edit-profile Page end */
+}
+/*  ---------------------- Small Device end ----------------------  */
+
+/*  ---------------------- Medium Device start ----------------------  */
+@media (min-width: 768px) and (max-width: 991px){
+    /* Home Page start */
+    .column_change {
+        flex-direction: column-reverse;
+    }
+
+    .resource_details {
+        padding-left: 60px;
+    }
+
+    #utilities_part {
+        margin-top: 60px;
+    }
+
+    #events_part {
+        margin-top: 60px;
+    }
+
+    #office_part {
+        margin-top: 40px;
+    }
+
+    #staying_well {
+        margin-top: 40px;
+    }
+    /* Home Page end */
+
+    /* Newsfeed Page start */
+    .navbar .after_login img {
+        width: 145px;
+    }
+
+    #navbarSupportedContent {
+        background-color: #2E3094;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        color: #fff !important;
+        padding-right: 20px;
+        padding-left: 0;
+        text-align: right;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .dropdown-menu::after {
+        top: 39px;
+        right: 23px;
+        color: #fff;
+    }
+
+    .dropdown-item {
+        text-align: right;
+    }
+
+    .top_news_img {
+        height: 315px;
+    }
+    /* Newsfeed Page end */
+
+    /* Edit-profile Page start */
+    #edit_profile_main {
+        padding-top: 45px;
+    }
+
+    #edit_profile_main .align-items-start {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    #edit_profile_main .edit_input {
+        display: block;
+    }
+
+    #edit_profile_main .edit_input_field {
+        width: 100%;
+    }
+
+    #edit_profile_main .edit_input_text {
+        margin-bottom: 16px;
+    }
+    /* Edit-profile Page end */
+}
+/*  ---------------------- Medium Device end ----------------------  */
+
+/*  ---------------------- XXL Device start ----------------------  */
+@media (min-width: 1400px) and (max-width: 1599px){
+    .resource_details {
+        padding-right: 100px;
+        padding-left: 153px;
+    }
+
+    .resource_details_right {
+        padding-left: 100px;
+        padding-right: 153px;
+    }
+}
+
+/*  ---------------------- 1600 - 1799 Device start ----------------------  */
+@media (min-width: 1600px) and (max-width: 1799px){
+    .resource_details {
+        padding-top: 100px;
+        padding-right: 100px;
+        padding-left: 251px;
+    }
+
+    .resource_details_right {
+        padding-top: 100px;
+        padding-left: 100px;
+        padding-right: 251px;
+    }
+}
+/*  ---------------------- 1600 - 1799 Device end ----------------------  */
+
+/*  ---------------------- 1800 - 1999 Device start ----------------------  */
+@media (min-width: 1800px) and (max-width: 1999px){
+    .resource_details {
+        padding-top: 130px;
+        padding-right: 100px;
+        padding-left: 312px;
+    }
+
+    .resource_details_right {
+        padding-top: 130px;
+        padding-left: 100px;
+        padding-right: 312px;
+    }
+}
+/*  ---------------------- 1800 - 1999 Device end ----------------------  */

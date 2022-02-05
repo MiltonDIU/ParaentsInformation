@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DIU Parents Information Page</title>
+        <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/aos.css">
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        <!-- ----------------------- preloader start ----------------------- -->
+        <div id="preloader"></div>
+        <!-- ----------------------- preloader end ----------------------- -->
+
+        <!-- ----------------------- Navbar start ----------------------- -->
+        <nav class="navbar sticky-top">
+            <div class="container nav-container">
+                <a class="navbar-brand" href="parents-information.html">
+                    <img src="images/Parents Experience Logo.png" alt="DIU Parents Experience">
+                </a>
+            </div>
+        </nav>
+        <!-- ----------------------- Navbar end ----------------------- -->
+
+        <!-- ----------------------- welcome start ----------------------- -->
+        <section id="welcome">
+            <div class="container">
+                <div class="welcome_main">
+                    <h1 class="heading_three mb-1">Welcome to The DIU Parent Experience!</h1>
+                    <p class="paragraph mb-4">Select one or more of the parent groups below:</p>
+
+                    <div class="welcome_box">
+                        <form action="">
+                            <div class="s_group mb-4">
+                                <div class="f_group mb-2">
+                                    <input type="checkbox" id="currentStudent" name="currentStudent" value="Parent of Current Student">
+                                    <label for="currentStudent" class="paragraph c_text">Parents of Current Students</label>
+                                </div>
+                                
+                                <p class="paragraph mb-l">Welcome to the DIU community! We are excited to have your student on campus and want you to know that as parents and family members you are an important part of our community as well. From Parents’ Day to this online Parent Experience Website, we want to provide you with the information you need and opportunities to connect with Daffodil International University and your student’s experience. We hope to see you on our campus soon!</p>
+                            </div>
+
+                            <div class="s_group mb-4">
+                                <div class="f_group mb-2">
+                                    <input type="checkbox" id="prospectiveStudent" name="prospectiveStudent" value="Parent of Prospective Student">
+                                    <label for="prospectiveStudent" class="paragraph c_text">Parents of Prospective Students</label>
+                                </div>
+                                
+                                <p class="paragraph mb-l">From its inception, Daffodil International University (DIU) has been preparing students to become leaders in their fields by providing an education that combines exceptional academics with professional experience. DIU is offering 31 Undergraduate and Master’s programs under 5 Faculties.</p>
+                            </div>
+
+                            <div class="s_group">
+                                <div class="input_group">
+                                    <input type="submit" value="Get Started" class="btn btn regular_btn submit_btn">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ----------------------- welcome end ----------------------- -->
+
+        <!-- ----------------------- footer start ----------------------- -->
+        <footer>
+            <!-- ------------------------------ Return to Top start ------------------------------ -->
+                <a href="javascript:" id="return-to-top">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            <!-- ------------------------------ Return to Top end ------------------------------ -->
+            <div class="container">
+                <p class="footer_text">Copyright © 2022 Daffodil International University. All Rights Reserved.</p>
+            </div>
+        </footer>
+        <!-- ----------------------- footer end ----------------------- -->
+
+
+        <script src="js/jquery-1.12.4.min.js"></script>
+
+        <script>
+            // ===== Return to Top ==== 
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 200px
+                    $('#return-to-top').fadeIn(200);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+                }
+            });
+    
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

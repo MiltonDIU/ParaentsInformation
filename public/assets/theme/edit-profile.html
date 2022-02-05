@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DIU Parents Information Page</title>
+        <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/all.min.css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/animate.min.css" />
+        <link rel="stylesheet" href="css/aos.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        <!-- ----------------------- preloader start ----------------------- -->
+        <div id="preloader"></div>
+        <!-- ----------------------- preloader end ----------------------- -->
+
+        <!-- ----------------------- Navbar start ----------------------- -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand after_login" href="parents-information.html">
+                    <img src="images/Parents Experience Logo.png" alt="DIU Parents Experience"/>
+                </a>
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="newsfeed.html" aria-current="page">Newsfeed</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="edit-profile.html"><i class="fas fa-pencil-alt"></i>Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i>Log Out</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- ----------------------- Navbar end ----------------------- -->
+
+        <!-- ----------------------- edit profile start ----------------------- -->
+        <section id="edit_profile_main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12">
+                        <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <button class="nav-link active" id="edit_profile_tab" data-bs-toggle="pill" data-bs-target="#edit_profile" type="button" role="tab" aria-controls="edit_profile" aria-selected="true"><i class="fas fa-pencil-alt"></i>Edit Profile</button>
+                                
+                                <button class="nav-link" id="reset_password_tab" data-bs-toggle="pill" data-bs-target="#reset_password" type="button" role="tab" aria-controls="reset_password" aria-selected="false"><i class="fas fa-lock"></i>Reset Password</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="edit_profile" role="tabpanel" aria-labelledby="edit_profile_tab">
+                                <div class="edit_form_groups">
+                                    <div class="edit_input full_width mb-3">
+                                        <label for="firstName" class="paragraph edit_input_text">First Name</label>
+                                        <input type="text" id="firstName" class="edit_input_field">
+                                    </div>
+
+                                    <div class="edit_input full_width mb-3">
+                                        <label for="lastName" class="paragraph edit_input_text">Last Name</label>
+                                        <input type="text" id="lastName" class="edit_input_field">
+                                    </div>
+
+                                    <div class="edit_input full_width mb-3">
+                                        <label for="phoneNumber" class="paragraph edit_input_text">Phone Number</label>
+                                        <input type="text" id="phoneNumber" class="edit_input_field">
+                                    </div>
+
+                                    <div class="edit_input full_width mb-3">
+                                        <label for="emailAddress" class="paragraph edit_input_text">Email Address</label>
+                                        <input type="email" id="emailAddress" class="edit_input_field">
+                                    </div>
+
+                                    <div class="edit_input full_width mb-3">
+                                        <label for="presentAddress" class="paragraph edit_input_text">Present Address</label>
+                                        <input type="text" id="presentAddress" class="edit_input_field">
+                                    </div>
+
+                                    <div class="edit_input full_width mb-4">
+                                        <label for="studentId" class="paragraph edit_input_text">Student ID <span>(Optional)</span></label>
+                                        <input type="text" id="studentId" class="edit_input_field">
+                                    </div>
+
+                                    <div class="edit_buttons">
+                                        <input type="submit" value="Save Changes" class="btn btn regular_btn submit_btn">
+
+                                        <input type="submit" value="Cancel" class="btn btn regular_btn cancel_btn">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="reset_password" role="tabpanel" aria-labelledby="reset_password_tab">
+                                <div class="edit_password_groups">
+                                    <div class="edit_input full_width mb-3">
+                                        <label for="currentPassword" class="paragraph edit_input_text">Current Password</label>
+                                        <input type="password" id="currentPassword" class="edit_input_field password_field">
+                                    </div>
+
+                                    <div class="edit_input full_width mb-3">
+                                        <label for="newPassword" class="paragraph edit_input_text">New Password</label>
+                                        <input type="password" id="newPassword" class="edit_input_field password_field">
+                                    </div>
+
+                                    <div class="edit_input full_width mb-3">
+                                        <label for="confirmNewPassword" class="paragraph edit_input_text">Confirm New Password</label>
+                                        <input type="password" id="confirmNewPassword" class="edit_input_field password_field">
+                                    </div>
+
+                                    <div class="edit_buttons">
+                                        <input type="submit" value="Save Changes" class="btn btn regular_btn submit_btn">
+
+                                        <input type="submit" value="Cancel" class="btn btn regular_btn cancel_btn">
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ----------------------- edit profile end ----------------------- -->
+
+        <!-- ----------------------- footer start ----------------------- -->
+        <footer class="footer_after_login">
+            <!-- ------------------------------ Return to Top start ------------------------------ -->
+            <a href="javascript:" id="return-to-top">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+            <!-- ------------------------------ Return to Top end ------------------------------ -->
+            <div class="container">
+                <p class="footer_text">
+                    Copyright © 2022 Daffodil International University. All
+                    Rights Reserved.
+                </p>
+            </div>
+        </footer>
+        <!-- ----------------------- footer end ----------------------- -->
+
+        <script src="js/jquery-1.12.4.min.js"></script>
+
+        <script>
+            // ===== Return to Top ====
+            $(window).scroll(function () {
+                if ($(this).scrollTop() >= 200) {
+                    // If page is scrolled more than 200px
+                    $("#return-to-top").fadeIn(200); // Fade in the arrow
+                } else {
+                    $("#return-to-top").fadeOut(200); // Else fade out the arrow
+                }
+            });
+
+            $("#return-to-top").click(function () {
+                // When arrow is clicked
+                $("body,html").animate(
+                    {
+                        scrollTop: 0, // Scroll to top of body
+                    },
+                    500
+                );
+            });
+        </script>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
