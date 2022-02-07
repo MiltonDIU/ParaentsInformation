@@ -40,6 +40,8 @@ class Profile extends Model implements HasMedia
         'reference_name',
         'reference_mobile',
         'about',
+        'address',
+        'student_id',
         'created_at',
         'updated_at',
         'deleted_at',

@@ -26,13 +26,51 @@
 <!-- ----------------------- preloader end ----------------------- -->
 
 <!-- ----------------------- Navbar start ----------------------- -->
-<nav class="navbar sticky-top">
-    <div class="container nav-container">
-        <a class="navbar-brand" href="parents-information.html">
-            <img src="{{ url('assets/theme/images//Parents Experience Logo.png')}}" alt="DIU Parents Experience"/>
-        </a>
-    </div>
-</nav>
+@if(Auth::check())
+    <!-- ----------------------- Navbar start ----------------------- -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand after_login" href="{{ route('home') }}">
+                <img src="{{ url('assets/theme/images//Parents Experience Logo.png')}}" alt="DIU Parents Experience"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="newsfeed.html" aria-current="page">Newsfeed</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{route('profile')}}"><i class="fas fa-pencil-alt"></i>Edit Profile</a></li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ----------------------- Navbar end ----------------------- -->
+
+@else
+    <nav class="navbar sticky-top">
+        <div class="container nav-container">
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img src="{{ url('assets/theme/images//Parents Experience Logo.png')}}" alt="DIU Parents Experience"/>
+            </a>
+        </div>
+    </nav>
+@endif
+
+
+
 
 
 <!-- ----------------------- Navbar end ----------------------- -->

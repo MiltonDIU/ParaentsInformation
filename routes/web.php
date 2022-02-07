@@ -11,6 +11,8 @@ use App\Http\Controllers\UserVerificationController;
 use App\Http\Controllers\Admin\CountriesController;
 use App\Http\Controllers\Admin\ProfilesController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\FrontendController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +24,11 @@ use App\Http\Controllers\Admin\SettingsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontendController::class,'index'])->name('home');
+Route::get('/a-to-z', [FrontendController::class,'aToZ'])->name('aToZ');
+//after login
+Route::get('/newsfeed', [HomeController::class,'newsfeed'])->name('newsfeed');
+Route::get('/profile', [HomeController::class,'profile'])->name('profile');
 
 
 Route::get('/home', function () {

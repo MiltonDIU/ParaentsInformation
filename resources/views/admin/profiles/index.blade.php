@@ -59,9 +59,11 @@
                             </td>
                             <td>
                                 @if($user->profile)
+                                    @if($user->profile->avater)
                                     <a href="{{ url($user->profile->avatar->getUrl()) }}" target="_blank" style="display: inline-block">
                                         <img src="{{ url($user->profile->avatar->getUrl('thumb')) }}">
                                     </a>
+                                 @endif
                                 @endif
                             </td>
                             <td>
