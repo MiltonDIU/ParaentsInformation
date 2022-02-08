@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\CountriesController;
 use App\Http\Controllers\Admin\ProfilesController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Admin\SlidersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,9 +52,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
         'audit-logs' => AuditLogsController::class,
         'countries' => CountriesController::class,
         'profiles' => ProfilesController::class,
-        //'settings' => SettingsController::class,
+        'sliders' => SlidersController::class,
     ]);
-    // Settings
+    // Sliders
+    Route::delete('sliders/destroy', [SlidersController::class, 'SlidersController@massDestroy'])->name('sliders.massDestroy');
+    Route::post('sliders/media', [SlidersController::class, 'storeMedia'])->name('sliders.storeMedia');
+    Route::post('sliders/ckmedia', [SlidersController::class, 'storeCKEditorImages'])->name('sliders.storeCKEditorImages');
+
 //    Route::resources(['permissions' => SettingsController::class],['except' => ['create', 'store', 'show', 'destroy']]);
     Route::post('settings/media', [SettingsController::class, 'storeMedia'])->name('settings.storeMedia');
     Route::post('settings/ckmedia', [SettingsController::class, 'storeCKEditorImages'])->name('settings.storeCKEditorImages');
