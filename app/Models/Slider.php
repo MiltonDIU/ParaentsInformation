@@ -53,14 +53,14 @@ class Slider extends Model implements HasMedia
 
     public function getPictureAttribute()
     {
-        $file = $this->getMedia('picture')->last();
-        if ($file) {
-            $file->url       = $file->getUrl();
-            $file->thumbnail = $file->getUrl('thumb');
-            $file->preview   = $file->getUrl('preview');
-        }
+        $files = $this->getMedia('picture');
+        $files->each(function ($item) {
+            $item->url = $item->getUrl();
+            $item->thumbnail = $item->getUrl('thumb');
+            $item->preview = $item->getUrl('preview');
+        });
 
-        return $file;
+        return $files;
     }
 
     protected function serializeDate(DateTimeInterface $date)

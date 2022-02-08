@@ -73,11 +73,12 @@
                                 {{ App\Models\Slider::IS_ACTIVE_RADIO[$slider->is_active] ?? '' }}
                             </td>
                             <td>
-                                @if($slider->picture)
-                                    <a href="{{ $slider->picture->getUrl() }}" target="_blank" style="display: inline-block">
-                                        <img src="{{ $slider->picture->getUrl('thumb') }}">
+
+                                @foreach($slider->picture as $key => $media)
+                                    <a href="{{ $media->getUrl() }}" target="_blank" style="display: inline-block">
+                                        <img src="{{ $media->getUrl('thumb') }}">
                                     </a>
-                                @endif
+                                @endforeach
                             </td>
                             <td>
                                 @can('slider_show')

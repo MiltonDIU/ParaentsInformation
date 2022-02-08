@@ -37,8 +37,8 @@ class SlidersController extends Controller
     {
         $slider = Slider::create($request->all());
 
-        if ($request->input('picture', false)) {
-            $slider->addMedia(storage_path('tmp/uploads/' . basename($request->input('picture'))))->toMediaCollection('picture');
+        foreach ($request->input('picture', []) as $file) {
+            $slider->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('picture');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -59,15 +59,18 @@ class SlidersController extends Controller
     {
         $slider->update($request->all());
 
-        if ($request->input('picture', false)) {
-            if (!$slider->picture || $request->input('picture') !== $slider->picture->file_name) {
-                if ($slider->picture) {
-                    $slider->picture->delete();
+        if (count($slider->picture) > 0) {
+            foreach ($slider->picture as $media) {
+                if (!in_array($media->file_name, $request->input('picture', []))) {
+                    $media->delete();
                 }
-                $slider->addMedia(storage_path('tmp/uploads/' . basename($request->input('picture'))))->toMediaCollection('picture');
             }
-        } elseif ($slider->picture) {
-            $slider->picture->delete();
+        }
+        $media = $slider->picture->pluck('file_name')->toArray();
+        foreach ($request->input('picture', []) as $file) {
+            if (count($media) === 0 || !in_array($file, $media)) {
+                $slider->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('picture');
+            }
         }
 
         return redirect()->route('admin.sliders.index');

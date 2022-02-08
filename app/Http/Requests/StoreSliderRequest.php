@@ -22,7 +22,6 @@ class StoreSliderRequest extends FormRequest
                 'min:2',
                 'max:30',
                 'required',
-                'unique:sliders',
             ],
             'title' => [
                 'string',
@@ -31,7 +30,7 @@ class StoreSliderRequest extends FormRequest
             ],
             'link_text' => [
                 'string',
-                'max:10',
+                'max:100',
                 'nullable',
             ],
             'link_url' => [

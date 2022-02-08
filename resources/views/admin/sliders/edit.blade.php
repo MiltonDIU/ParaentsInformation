@@ -151,39 +151,45 @@
     </script>
 
     <script>
+        var uploadedPictureMap = {}
         Dropzone.options.pictureDropzone = {
             url: '{{ route('admin.sliders.storeMedia') }}',
-            maxFilesize: 1, // MB
+            maxFilesize: 3, // MB
             acceptedFiles: '.jpeg,.jpg,.png,.gif',
-            maxFiles: 1,
             addRemoveLinks: true,
             headers: {
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
             params: {
-                size: 1,
-                width: 2024,
-                height: 2024
+                size: 3,
+                width: 4096,
+                height: 4096
             },
             success: function (file, response) {
-                $('form').find('input[name="picture"]').remove()
-                $('form').append('<input type="hidden" name="picture" value="' + response.name + '">')
+                $('form').append('<input type="hidden" name="picture[]" value="' + response.name + '">')
+                uploadedPictureMap[file.name] = response.name
             },
             removedfile: function (file) {
+                console.log(file)
                 file.previewElement.remove()
-                if (file.status !== 'error') {
-                    $('form').find('input[name="picture"]').remove()
-                    this.options.maxFiles = this.options.maxFiles + 1
+                var name = ''
+                if (typeof file.file_name !== 'undefined') {
+                    name = file.file_name
+                } else {
+                    name = uploadedPictureMap[file.name]
                 }
+                $('form').find('input[name="picture[]"][value="' + name + '"]').remove()
             },
             init: function () {
                 @if(isset($slider) && $slider->picture)
-                var file = {!! json_encode($slider->picture) !!}
-                this.options.addedfile.call(this, file)
-                this.options.thumbnail.call(this, file, file.preview)
-                file.previewElement.classList.add('dz-complete')
-                $('form').append('<input type="hidden" name="picture" value="' + file.file_name + '">')
-                this.options.maxFiles = this.options.maxFiles - 1
+                var files = {!! json_encode($slider->picture) !!}
+                for (var i in files) {
+                    var file = files[i]
+                    this.options.addedfile.call(this, file)
+                    this.options.thumbnail.call(this, file, file.preview)
+                    file.previewElement.classList.add('dz-complete')
+                    $('form').append('<input type="hidden" name="picture[]" value="' + file.file_name + '">')
+                }
                 @endif
             },
             error: function (file, response) {

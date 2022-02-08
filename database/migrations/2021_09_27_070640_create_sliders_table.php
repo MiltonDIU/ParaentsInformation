@@ -15,7 +15,7 @@ class CreateSlidersTable extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('page_name')->unique();
+            $table->string('page_name');
             $table->string('title')->nullable();
             $table->longText('content')->nullable();
             $table->string('link_text')->nullable();
