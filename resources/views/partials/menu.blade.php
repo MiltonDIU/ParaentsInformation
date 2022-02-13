@@ -129,6 +129,33 @@
                 </a>
             </li>
         @endcan
+
+        @can('link_category_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.link-categories.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/link-categories") || request()->is("admin/link-categories/*") ? "active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    <p>
+                        {{ trans('cruds.linkCategory.title') }}
+                    </p>
+                </a>
+            </li>
+        @endcan
+        @can('link_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.links.index") }}" class="c-sidebar-nav-link  {{ request()->is("admin/links") || request()->is("admin/links/*") ? "active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    <p>
+                        {{ trans('cruds.link.title') }}
+                    </p>
+                </a>
+            </li>
+        @endcan
+
+
         <li class="c-sidebar-nav-item">
             <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                 <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">

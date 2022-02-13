@@ -19,6 +19,8 @@
     <link rel="stylesheet" href=" {{ url('assets/theme/css/aos.css')}}"/>
     <link rel="stylesheet" href=" {{ url('assets/theme/css/style.css')}}"/>
     <link rel="stylesheet" href=" {{ url('assets/theme/css/responsive.css')}}">
+
+    @stack('style')
 </head>
 <body>
 <!-- ----------------------- preloader start ----------------------- -->
@@ -121,5 +123,7 @@
 <script src="{{ url('assets/theme/js/owl.carousel.min.js')}}"></script>
 <script src="{{ url('assets/theme/js/aos.js')}}"></script>
 <script src="{{ url('assets/theme/js/script.js')}}"></script>
+
+@stack('script')
 </body>
 </html>

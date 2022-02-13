@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\ProfilesController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\SlidersController;
+use App\Http\Controllers\Admin\LinkCategoryController;
+use App\Http\Controllers\Admin\LinksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,11 +55,19 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
         'countries' => CountriesController::class,
         'profiles' => ProfilesController::class,
         'sliders' => SlidersController::class,
+        'link-categories' => LinkCategoryController::class,
+        'links' => LinksController::class,
     ]);
     // Sliders
-    Route::delete('sliders/destroy', [SlidersController::class, 'SlidersController@massDestroy'])->name('sliders.massDestroy');
+    Route::delete('sliders/destroy', [SlidersController::class, 'massDestroy'])->name('sliders.massDestroy');
     Route::post('sliders/media', [SlidersController::class, 'storeMedia'])->name('sliders.storeMedia');
     Route::post('sliders/ckmedia', [SlidersController::class, 'storeCKEditorImages'])->name('sliders.storeCKEditorImages');
+
+    // Link Category
+    Route::delete('link-categories/destroy', [LinkCategoryController::class, 'massDestroy'])->name('link-categories.massDestroy');
+    Route::post('link-categories/media', [LinkCategoryController::class, 'storeMedia'])->name('link-categories.storeMedia');
+    Route::post('link-categories/ckmedia', [LinkCategoryController::class, 'storeCKEditorImages'])->name('link-categories.storeCKEditorImages');
+
 
 //    Route::resources(['permissions' => SettingsController::class],['except' => ['create', 'store', 'show', 'destroy']]);
     Route::post('settings/media', [SettingsController::class, 'storeMedia'])->name('settings.storeMedia');
@@ -70,6 +80,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
 
 
     Route::get('/', [HomeController::class, 'index']);
+    Route::delete('links/destroy', [LinksController::class, 'massDestroy'])->name('links.massDestroy');
     Route::delete('permissions/destroy', [PermissionsController::class, 'massDestroy'])->name('permissions.massDestroy');
     Route::delete('roles/destroy', [RolesController::class, 'massDestroy'])->name('roles.massDestroy');
     Route::delete('users/destroy', [UsersController::class, 'massDestroy'])->name('users.massDestroy');

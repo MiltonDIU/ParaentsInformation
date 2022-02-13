@@ -148,26 +148,70 @@ class PermissionsTableSeeder extends Seeder
 //                'id'    => 34,
 //                'title' => 'slider_access',
 //            ],
+//            [
+//                'id'    => 35,
+//                'title' => 'slider_create',
+//            ],
+//            [
+//                'id'    => 36,
+//                'title' => 'slider_edit',
+//            ],
+//            [
+//                'id'    => 37,
+//                'title' => 'slider_show',
+//            ],
+//            [
+//                'id'    => 38,
+//                'title' => 'slider_delete',
+//            ],
+//            [
+//                'id'    => 39,
+//                'title' => 'slider_access',
+//            ],
+
             [
-                'id'    => 35,
-                'title' => 'slider_create',
+                'id'    => 40,
+                'title' => 'link_category_create',
             ],
             [
-                'id'    => 36,
-                'title' => 'slider_edit',
+                'id'    => 41,
+                'title' => 'link_category_edit',
             ],
             [
-                'id'    => 37,
-                'title' => 'slider_show',
+                'id'    => 42,
+                'title' => 'link_category_show',
             ],
             [
-                'id'    => 38,
-                'title' => 'slider_delete',
+                'id'    => 43,
+                'title' => 'link_category_delete',
             ],
             [
-                'id'    => 39,
-                'title' => 'slider_access',
+                'id'    => 44,
+                'title' => 'link_category_access',
             ],
+            [
+                'id'    => 45,
+                'title' => 'link_create',
+            ],
+            [
+                'id'    => 46,
+                'title' => 'link_edit',
+            ],
+            [
+                'id'    => 47,
+                'title' => 'link_show',
+            ],
+            [
+                'id'    => 48,
+                'title' => 'link_delete',
+            ],
+            [
+                'id'    => 49,
+                'title' => 'link_access',
+            ],
+
+
+
 
         ];
 
