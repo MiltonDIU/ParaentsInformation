@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-@include('theme.partial.slider')
+@include('theme.partial.slider',['page'=>'Home'])
 <!-- ----------------------- index part start ----------------------- -->
 @include('theme.partial.atoz')
 <!-- ----------------------- index part end ----------------------- -->

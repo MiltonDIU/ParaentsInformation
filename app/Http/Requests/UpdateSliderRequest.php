@@ -22,7 +22,7 @@ class UpdateSliderRequest extends FormRequest
                 'min:2',
                 'max:30',
                 'required',
-//                'unique:sliders,page_name,' . request()->route('slider')->id,
+                'unique:sliders,page_name,' . request()->route('slider')->id,
             ],
             'title' => [
                 'string',

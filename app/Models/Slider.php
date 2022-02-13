@@ -67,4 +67,11 @@ class Slider extends Model implements HasMedia
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public static function sliders($page_name){
+        $sliders = Slider::orderBy('created_at', 'desc')->where('is_active',1)->where('page_name',$page_name)->get();
+        return $sliders;
+    }
+
+
 }

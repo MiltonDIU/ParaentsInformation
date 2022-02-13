@@ -22,6 +22,7 @@ class StoreSliderRequest extends FormRequest
                 'min:2',
                 'max:30',
                 'required',
+                'unique:sliders,page_name'
             ],
             'title' => [
                 'string',
