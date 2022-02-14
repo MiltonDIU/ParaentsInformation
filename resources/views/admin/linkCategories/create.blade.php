@@ -28,9 +28,10 @@
                 </div>
 
 
+
                 <div class="form-group">
                     <label for="content">{{ trans('cruds.linkCategory.fields.content') }}</label>
-                    <textarea class="form-control ckeditor {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{!! old('content') !!}</textarea>
+                    <textarea class="form-control ckeditor {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="ckeditor">{!! old('content') !!}</textarea>
                     @if($errors->has('content'))
                         <span class="text-danger">{{ $errors->first('content') }}</span>
                     @endif
@@ -190,14 +191,21 @@
                 }
             }
 
-            var allEditors = document.querySelectorAll('.ckeditor');
+            var allEditors = document.querySelectorAll('.ckeditor1');
+            console.log(allEditors)
             for (var i = 0; i < allEditors.length; ++i) {
                 ClassicEditor.create(
-                    allEditors[i], {
+                    allEditors[0], {
                         extraPlugins: [SimpleUploadAdapter]
                     }
                 );
-            }
+            };
+
+
+
+
+
+
         });
     </script>
 

@@ -93,4 +93,11 @@ class LinkCategory extends Model implements HasMedia
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public static function singleCategory($id,$page,$is_utilities){
+        return LinkCategory::where('id',$id)->where('page_name',$page)->where('is_active','1')->where('is_utilities',$is_utilities)->first();
+    }
+    public static function utilities($page,$is_utilities){
+        return LinkCategory::where('page_name',$page)->where('is_active','1')->where('is_utilities',$is_utilities)->get();
+    }
 }

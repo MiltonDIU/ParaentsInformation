@@ -188,7 +188,7 @@
                 }
             }
 
-            var allEditors = document.querySelectorAll('.ckeditor');
+            var allEditors = document.querySelectorAll('.ckeditor1');
             for (var i = 0; i < allEditors.length; ++i) {
                 ClassicEditor.create(
                     allEditors[i], {
