@@ -74,7 +74,7 @@ class LinkCategory extends Model implements HasMedia
 
     public function linkCategoryLinks()
     {
-        return $this->belongsToMany(Link::class);
+        return $this->belongsToMany(Link::class)->orderBy('title','desc');
     }
 
     public function getPictureAttribute()

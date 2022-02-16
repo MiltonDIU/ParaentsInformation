@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Link;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,8 +17,8 @@ class DatabaseSeeder extends Seeder
 //            RoleUserTableSeeder::class,
 //            CountryTableSeeder::class,
 //            SettingTableSeeder::class,
-        LinkCategoryTableSeeder::class
-
+//        LinkCategoryTableSeeder::class,
+LinkTableSeeder::class
         ]);
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\SlidersController;
+use App\Models\Link;
+use App\Models\LinkCategory;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,8 @@ class FrontendController extends Controller
     }
 
     public function aToZ(){
-        return view('theme.a-to-z');
+        $category =  LinkCategory::with('linkCategoryLinks')->where('id',12)->first();
+        return view('theme.a-to-z',compact('category'));
     }
 
 

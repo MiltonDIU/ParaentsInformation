@@ -107,22 +107,32 @@
                     </ul>
 
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-a" role="tabpanel" aria-labelledby="pills-a-tab">
+
+
+@for($i=97; $i<=122; $i++)
+
+                        <div class="tab-pane fade {!! ($i==97)?'show active':'' !!}" id="pills-{{chr($i)}}" role="tabpanel" aria-labelledby="pills-{{chr($i)}}-tab">
                             <ul class="no_content">
-                                <li><a href="https://daffodilvarsity.edu.bd/committee/academic-council" target="_blank" class="paragraph tab_text">Academic Council</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/academic-guidelines" target="_blank" class="paragraph">Academic Guidelines</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/lecture-list" target="_blank" class="paragraph">Academia Lecture Series</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/hostel-facilities" target="_blank" class="paragraph">Accomodation</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/admin/management" target="_blank" class="paragraph">Administration</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/admission" target="_blank" class="paragraph">Admission</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/admission-contact" target="_blank" class="paragraph">Admission Contact</a></li>
-                                <li><a href="https://pd.daffodilvarsity.edu.bd/admission/online" target="_blank" class="paragraph">Apply Now</a></li>
-                                <li><a href="https://somporka.com/login/" target="_blank" class="paragraph">Alumni</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/apps" class="paragraph">Apps</a></li>
-                                <li><a href="http://artofliving.social/" target="_blank" class="paragraph">Art of Living</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/associate-deans-heads" target="_blank" class="paragraph">Associate Deans & Associate Heads</a></li>
-                            </ul>
+                                @php
+                                    $j=0;
+                                @endphp
+                                @foreach($category->linkCategoryLinks as $link)
+                                @if(chr($i)==strtolower(substr($link->title,-0,1)))
+                                    <li><a href="{{$link->link}}" target="_blank" class="paragraph tab_text">{{$link->title}}</a></li>
+                                        @php
+                                            $j++;
+                                        @endphp
+                                @endif
+                                @endforeach
+                                @if($j==0)
+                                    <p class="no_content paragraph"> Sorry, nothing found!</p>
+                                @endif
+                           </ul>
                         </div>
+
+@endfor
+
+
 
                         <div class="tab-pane fade" id="pills-b" role="tabpanel" aria-labelledby="pills-b-tab">
                             <ul class="no_content">
@@ -157,221 +167,228 @@
                             </ul>
                         </div>
 
-                        <div class="tab-pane fade" id="pills-c" role="tabpanel" aria-labelledby="pills-c-tab">
-                            <ul class="no_content">
-                                <li><a href="http://cdc.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Career Development Center (CDC)</a></li>
-                                <li><a href="http://career.daffodilvarsity.edu.bd/?app=home" target="_blank" class="paragraph tab_text">Career at DIU</a></li>
-                                <li><a href="http://erp.daffodilvarsity.edu.bd/#/" target="_blank" class="paragraph tab_text">Certificate Verification</a></li>
-                                <li><a href="https://convocation.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Convocation</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/coordination-officer" target="_blank" class="paragraph tab_text">Coordination Officers</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/corona" target="_blank" class="paragraph tab_text">COVID-19 Updates</a></li>
-                                <li><a href="http://financialaid.daffodilvarsity.edu.bd/diu_cefs/?app=home" target="_blank" class="paragraph tab_text">Chairman Endowment Fund</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/csr-activities" target="_blank" class="paragraph tab_text">CSR Activities</a></li>
-                                <li><a href="http://www.campustv.ac/" target="_blank" class="paragraph tab_text">Campus TV</a></li>
-                                <li><a href="http://campusradio.ac/" target="_blank" class="paragraph tab_text">Campus Radio</a></li>
-                                <li><a href="" target="_blank" class="paragraph tab_text">Complaint Committee to prevent sexual harassment</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/committee/committees" target="_blank" class="paragraph tab_text">Committees</a></li>
-                                <li><a href="http://dsa.daffodilvarsity.edu.bd/index.php/diu-clubs" target="_blank" class="paragraph tab_text">Clubs</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/credit-transfer" target="_blank" class="paragraph tab_text">Credit Transfer Guidelines</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-c" role="tabpanel" aria-labelledby="pills-c-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="http://cdc.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Career Development Center (CDC)</a></li>--}}
+{{--                                <li><a href="http://career.daffodilvarsity.edu.bd/?app=home" target="_blank" class="paragraph tab_text">Career at DIU</a></li>--}}
+{{--                                <li><a href="http://erp.daffodilvarsity.edu.bd/#/" target="_blank" class="paragraph tab_text">Certificate Verification</a></li>--}}
+{{--                                <li><a href="https://convocation.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Convocation</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/coordination-officer" target="_blank" class="paragraph tab_text">Coordination Officers</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/corona" target="_blank" class="paragraph tab_text">COVID-19 Updates</a></li>--}}
+{{--                                <li><a href="http://financialaid.daffodilvarsity.edu.bd/diu_cefs/?app=home" target="_blank" class="paragraph tab_text">Chairman Endowment Fund</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/csr-activities" target="_blank" class="paragraph tab_text">CSR Activities</a></li>--}}
+{{--                                <li><a href="http://www.campustv.ac/" target="_blank" class="paragraph tab_text">Campus TV</a></li>--}}
+{{--                                <li><a href="http://campusradio.ac/" target="_blank" class="paragraph tab_text">Campus Radio</a></li>--}}
+{{--                                <li><a href="" target="_blank" class="paragraph tab_text">Complaint Committee to prevent sexual harassment</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/committee/committees" target="_blank" class="paragraph tab_text">Committees</a></li>--}}
+{{--                                <li><a href="http://dsa.daffodilvarsity.edu.bd/index.php/diu-clubs" target="_blank" class="paragraph tab_text">Clubs</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/credit-transfer" target="_blank" class="paragraph tab_text">Credit Transfer Guidelines</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-d" role="tabpanel" aria-labelledby="pills-d-tab">
-                            <ul class="no_content">
-                                <li><a href="http://financialaid.daffodilvarsity.edu.bd/diu_dhcs/?app=home" target="_blank" class="paragraph tab_text">Delwar Hussain Chowdhury Scholarship for Students welfare</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/deans-heads" target="_blank" class="paragraph tab_text">Deans & Heads</a></li>
-                                <li><a href="http://research.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Division of Research</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/daycare" target="_blank" class="paragraph tab_text">Daffodil Angel’s Day Care</a></li>
-                                <li><a href="http://dil.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Daffodil Institute of Languages (DIL)</a></li>
-                                <li><a href="http://diss.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Daffodil Institute of Social Sciences (DISS)</a></li>
-                                <li><a href="https://ic.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Daffodil Islamic Center</a></li>
-                                <li><a href="http://dsa.daffodilvarsity.edu.bd/index.php/diu-clubs" target="_blank" class="paragraph tab_text">DIU Clubs</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-d" role="tabpanel" aria-labelledby="pills-d-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="http://financialaid.daffodilvarsity.edu.bd/diu_dhcs/?app=home" target="_blank" class="paragraph tab_text">Delwar Hussain Chowdhury Scholarship for Students welfare</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/deans-heads" target="_blank" class="paragraph tab_text">Deans & Heads</a></li>--}}
+{{--                                <li><a href="http://research.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Division of Research</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/daycare" target="_blank" class="paragraph tab_text">Daffodil Angel’s Day Care</a></li>--}}
+{{--                                <li><a href="http://dil.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Daffodil Institute of Languages (DIL)</a></li>--}}
+{{--                                <li><a href="http://diss.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Daffodil Institute of Social Sciences (DISS)</a></li>--}}
+{{--                                <li><a href="https://ic.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Daffodil Islamic Center</a></li>--}}
+{{--                                <li><a href="http://dsa.daffodilvarsity.edu.bd/index.php/diu-clubs" target="_blank" class="paragraph tab_text">DIU Clubs</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-e" role="tabpanel" aria-labelledby="pills-e-tab">
-                            <ul class="no_content">
-                                <li><a href="http://employability.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Employability 360</a></li>
-                                <li><a href="http://dsa.daffodilvarsity.edu.bd/index.php/e-newsletter" target="_blank" class="paragraph tab_text">E-Newsletter</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/erp" target="_blank" class="paragraph tab_text">ERP</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-e" role="tabpanel" aria-labelledby="pills-e-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="http://employability.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Employability 360</a></li>--}}
+{{--                                <li><a href="http://dsa.daffodilvarsity.edu.bd/index.php/e-newsletter" target="_blank" class="paragraph tab_text">E-Newsletter</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/erp" target="_blank" class="paragraph tab_text">ERP</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-f" role="tabpanel" aria-labelledby="pills-f-tab">
-                            <ul class="no_content">
-                                <li><a href="http://financialaid.daffodilvarsity.edu.bd/?app=home" target="_blank" class="paragraph tab_text">Financial Aid & Scholarships</a></li>
-                                <li><a href="https://forum.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Forum</a></li>
-                                <li><a href="https://faculty.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Faculty Members</a></li>
-                                <li><a href="https://www.facebook.com/daffodilvarsity.edu.bd" target="_blank" class="paragraph tab_text">Facebook</a></li>
-                                <li><a href="https://fd.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Foundation Day</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-f" role="tabpanel" aria-labelledby="pills-f-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="http://financialaid.daffodilvarsity.edu.bd/?app=home" target="_blank" class="paragraph tab_text">Financial Aid & Scholarships</a></li>--}}
+{{--                                <li><a href="https://forum.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Forum</a></li>--}}
+{{--                                <li><a href="https://faculty.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Faculty Members</a></li>--}}
+{{--                                <li><a href="https://www.facebook.com/daffodilvarsity.edu.bd" target="_blank" class="paragraph tab_text">Facebook</a></li>--}}
+{{--                                <li><a href="https://fd.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Foundation Day</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-g" role="tabpanel" aria-labelledby="pills-g-tab">
-                            <ul class="no_content">
-                                <li><a href="https://goedu.ac/" target="_blank" class="paragraph tab_text">GoEdu</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/guidelines-for-guardians" target="_blank" class="paragraph tab_text">Guidelines for Guardians</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/gymnasium" target="_blank" class="paragraph tab_text">Gymnasium</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/green-campus" target="_blank" class="paragraph tab_text">Green Campus</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-g" role="tabpanel" aria-labelledby="pills-g-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://goedu.ac/" target="_blank" class="paragraph tab_text">GoEdu</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/guidelines-for-guardians" target="_blank" class="paragraph tab_text">Guidelines for Guardians</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/gymnasium" target="_blank" class="paragraph tab_text">Gymnasium</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/green-campus" target="_blank" class="paragraph tab_text">Green Campus</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-h" role="tabpanel" aria-labelledby="pills-h-tab">
-                            <ul class="no_content">
-                                <li><a href="http://hrdinstitute.org/" target="_blank" class="paragraph tab_text">HRDI</a></li>
-                                <li><a href="https://hall.daffodilvarsity.edu.bd/page/guidelines" target="_blank" class="paragraph tab_text">Hall Portal</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/history" target="_blank" class="paragraph tab_text">History of DIU</a></li>
-                                <li><a href="https://pd.daffodilvarsity.edu.bd/support_ticket" target="_blank" class="paragraph tab_text">Help Desk</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/admission-contact" target="_blank" class="paragraph tab_text">Helpline</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-h" role="tabpanel" aria-labelledby="pills-h-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="http://hrdinstitute.org/" target="_blank" class="paragraph tab_text">HRDI</a></li>--}}
+{{--                                <li><a href="https://hall.daffodilvarsity.edu.bd/page/guidelines" target="_blank" class="paragraph tab_text">Hall Portal</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/history" target="_blank" class="paragraph tab_text">History of DIU</a></li>--}}
+{{--                                <li><a href="https://pd.daffodilvarsity.edu.bd/support_ticket" target="_blank" class="paragraph tab_text">Help Desk</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/admission-contact" target="_blank" class="paragraph tab_text">Helpline</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-i" role="tabpanel" aria-labelledby="pills-i-tab">
-                            <ul class="no_content">
-                                <li><a href="https://www.instagram.com/daffodil.university/" target="_blank" class="paragraph tab_text">Instagram</a></li>
-                                <li><a href="http://internship.daffodilvarsity.edu.bd/?app=home" target="_blank" class="paragraph tab_text">Internship Portal</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/international/international-contact" target="_blank" class="paragraph tab_text">International Affairs & Admission</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/international/international-alumni" target="_blank" class="paragraph tab_text">International Alumni</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/int-tuition-fees" target="_blank" class="paragraph tab_text">International Tuition Fees</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" target="_blank" class="paragraph tab_text">International Scholarships</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/mps/members" target="_blank" class="paragraph tab_text">International Memberships</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/international-linkage" target="_blank" class="paragraph tab_text">International Linkages</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/international-conferences" target="_blank" class="paragraph tab_text">International Conferences</a></li>
-                                <li><a href="https://isbsp.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">ISBSP</a></li>
-                                <li><a href="http://iqac.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">IQAC</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-i" role="tabpanel" aria-labelledby="pills-i-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://www.instagram.com/daffodil.university/" target="_blank" class="paragraph tab_text">Instagram</a></li>--}}
+{{--                                <li><a href="http://internship.daffodilvarsity.edu.bd/?app=home" target="_blank" class="paragraph tab_text">Internship Portal</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/international/international-contact" target="_blank" class="paragraph tab_text">International Affairs & Admission</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/international/international-alumni" target="_blank" class="paragraph tab_text">International Alumni</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/int-tuition-fees" target="_blank" class="paragraph tab_text">International Tuition Fees</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/int-scholarship/scholarship-int" target="_blank" class="paragraph tab_text">International Scholarships</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/mps/members" target="_blank" class="paragraph tab_text">International Memberships</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/international-linkage" target="_blank" class="paragraph tab_text">International Linkages</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/international-conferences" target="_blank" class="paragraph tab_text">International Conferences</a></li>--}}
+{{--                                <li><a href="https://isbsp.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">ISBSP</a></li>--}}
+{{--                                <li><a href="http://iqac.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">IQAC</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-j" role="tabpanel" aria-labelledby="pills-j-tab">
-                            <ul class="no_content">
-                                <li><a href="https://diujahs.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Journal of Allied Health Sciences</a></li>
-                                <li><a href="http://diujbe.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Journal of Business & Entrepreneurship</a></li>
-                                <li><a href="http://diujhss.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Journal of Humanities & Social Sciences</a></li>
-                                <li><a href="http://diujst.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Journal of Science & Technology</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-j" role="tabpanel" aria-labelledby="pills-j-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://diujahs.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Journal of Allied Health Sciences</a></li>--}}
+{{--                                <li><a href="http://diujbe.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Journal of Business & Entrepreneurship</a></li>--}}
+{{--                                <li><a href="http://diujhss.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Journal of Humanities & Social Sciences</a></li>--}}
+{{--                                <li><a href="http://diujst.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Journal of Science & Technology</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-k" role="tabpanel" aria-labelledby="pills-k-tab">
-                            <p class="no_content paragraph"> Sorry, nothing found!</p>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-k" role="tabpanel" aria-labelledby="pills-k-tab">--}}
+{{--                            <p class="no_content paragraph"> Sorry, nothing found!</p>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-l" role="tabpanel" aria-labelledby="pills-l-tab">
-                            <ul class="no_content">
-                                <li><a href="http://library.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Library</a></li>
-                                <li><a href="https://www.linkedin.com/school/daffodil-international-university/mycompany/verification/" target="_blank" class="paragraph tab_text">LinkedIn</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-l" role="tabpanel" aria-labelledby="pills-l-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="http://library.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Library</a></li>--}}
+{{--                                <li><a href="https://www.linkedin.com/school/daffodil-international-university/mycompany/verification/" target="_blank" class="paragraph tab_text">LinkedIn</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-m" role="tabpanel" aria-labelledby="pills-m-tab">
-                            <ul class="no_content">
-                                <li><a href="http://financialaid.daffodilvarsity.edu.bd/diu_mums/?app=home" target="_blank" class="paragraph tab_text">Mofiz Uddin Majumder Scholarship Fund</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/committee/management-personnel" target="_blank" class="paragraph tab_text">Management Committee</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/bba" target="_blank" class="paragraph tab_text">Master of Business Administration (MBA)(Regular)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/bba" target="_blank" class="paragraph tab_text">Master of Business Administration (MBA)(Executive)</a></li>
-                                <li><a href="https://cse.daffodilvarsity.edu.bd/program/graduate/m-sc-in-cse" target="_blank" class="paragraph tab_text">M.Sc. in Computer Science & Engineering (CSE)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/cse" target="_blank" class="paragraph tab_text">M.Sc.in Management Information System (MIS)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/swe" target="_blank" class="paragraph tab_text">M.Sc. in Software Engineering (SWE)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/ete" target="_blank" class="paragraph tab_text">M.Sc. in Electronics & Telecommunication Engineering (ETE)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/te" target="_blank" class="paragraph tab_text">M.Sc. in Textile Engineering (TE)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/ph" target="_blank" class="paragraph tab_text">Master of Public Health (MPH)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/pharmacy" target="_blank" class="paragraph tab_text">Master of Pharmacy</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/english" target="_blank" class="paragraph tab_text">Master of Arts in English</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/law" target="_blank" class="paragraph tab_text">Master of Law (LLM)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/jmc" target="_blank" class="paragraph tab_text">MSS in Journalism, Media and Communication</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/department/mds" target="_blank" class="paragraph tab_text">MSS in Development Studies</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-m" role="tabpanel" aria-labelledby="pills-m-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="http://financialaid.daffodilvarsity.edu.bd/diu_mums/?app=home" target="_blank" class="paragraph tab_text">Mofiz Uddin Majumder Scholarship Fund</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/committee/management-personnel" target="_blank" class="paragraph tab_text">Management Committee</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/bba" target="_blank" class="paragraph tab_text">Master of Business Administration (MBA)(Regular)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/bba" target="_blank" class="paragraph tab_text">Master of Business Administration (MBA)(Executive)</a></li>--}}
+{{--                                <li><a href="https://cse.daffodilvarsity.edu.bd/program/graduate/m-sc-in-cse" target="_blank" class="paragraph tab_text">M.Sc. in Computer Science & Engineering (CSE)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/cse" target="_blank" class="paragraph tab_text">M.Sc.in Management Information System (MIS)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/swe" target="_blank" class="paragraph tab_text">M.Sc. in Software Engineering (SWE)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/ete" target="_blank" class="paragraph tab_text">M.Sc. in Electronics & Telecommunication Engineering (ETE)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/te" target="_blank" class="paragraph tab_text">M.Sc. in Textile Engineering (TE)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/ph" target="_blank" class="paragraph tab_text">Master of Public Health (MPH)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/pharmacy" target="_blank" class="paragraph tab_text">Master of Pharmacy</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/english" target="_blank" class="paragraph tab_text">Master of Arts in English</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/law" target="_blank" class="paragraph tab_text">Master of Law (LLM)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/jmc" target="_blank" class="paragraph tab_text">MSS in Journalism, Media and Communication</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/mds" target="_blank" class="paragraph tab_text">MSS in Development Studies</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-n" role="tabpanel" aria-labelledby="pills-n-tab">
-                            <ul class="no_content">
-                                <li><a href="https://daffodilvarsity.edu.bd/noticeboard" target="_blank" class="paragraph tab_text">Notice Board</a></li>
-                                <li><a href="https://nrda.daffodil.family/" target="_blank" class="paragraph tab_text">Non Residential Daffodil Alumni</a></li>
-                                <li><a href="http://news.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">News</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-n" role="tabpanel" aria-labelledby="pills-n-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/noticeboard" target="_blank" class="paragraph tab_text">Notice Board</a></li>--}}
+{{--                                <li><a href="https://nrda.daffodil.family/" target="_blank" class="paragraph tab_text">Non Residential Daffodil Alumni</a></li>--}}
+{{--                                <li><a href="http://news.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">News</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-o" role="tabpanel" aria-labelledby="pills-o-tab">
-                            <ul class="no_content">
-                                <li><a href="https://laptop.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">One Student One Laptop</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-o" role="tabpanel" aria-labelledby="pills-o-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://laptop.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">One Student One Laptop</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-p" role="tabpanel" aria-labelledby="pills-p-tab">
-                            <ul class="no_content">
-                                <li><a href="https://daffodilvarsity.edu.bd/department/islm" target="_blank" class="paragraph tab_text">Post Graduate Diploma in Information Science and Library Management</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/pc-purchase-schemes" target="_blank" class="paragraph tab_text">PC Purchase Scheme</a></li>
-                                <li><a href="https://www.pinterest.com/daffodilvarsity/_saved/" target="_blank" class="paragraph tab_text">Pinterest</a></li>
-                                <li><a href="http://dsa.daffodilvarsity.edu.bd/index.php/introduction" target="_blank" class="paragraph tab_text">Psychological Service Center</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/prospectus" target="_blank" class="paragraph tab_text">Prospectus</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-p" role="tabpanel" aria-labelledby="pills-p-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/department/islm" target="_blank" class="paragraph tab_text">Post Graduate Diploma in Information Science and Library Management</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/pc-purchase-schemes" target="_blank" class="paragraph tab_text">PC Purchase Scheme</a></li>--}}
+{{--                                <li><a href="https://www.pinterest.com/daffodilvarsity/_saved/" target="_blank" class="paragraph tab_text">Pinterest</a></li>--}}
+{{--                                <li><a href="http://dsa.daffodilvarsity.edu.bd/index.php/introduction" target="_blank" class="paragraph tab_text">Psychological Service Center</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/prospectus" target="_blank" class="paragraph tab_text">Prospectus</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-q" role="tabpanel" aria-labelledby="pills-q-tab">
-                            <p class="no_content paragraph"> Sorry, nothing found!</p>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-q" role="tabpanel" aria-labelledby="pills-q-tab">--}}
+{{--                            <p class="no_content paragraph"> Sorry, nothing found!</p>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-r" role="tabpanel" aria-labelledby="pills-r-tab">
-                            <ul class="no_content">
-                                <li><a href="https://hall.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Rowshan Ara Scholar Garden</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/research-projects" target="_blank" class="paragraph tab_text">Research Projects</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/ranking" target="_blank" class="paragraph tab_text">Rankings</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-r" role="tabpanel" aria-labelledby="pills-r-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://hall.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Rowshan Ara Scholar Garden</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/research-projects" target="_blank" class="paragraph tab_text">Research Projects</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/ranking" target="_blank" class="paragraph tab_text">Rankings</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-s" role="tabpanel" aria-labelledby="pills-s-tab">
-                            <ul class="no_content">
-                                <li><a href="https://daffodilvarsity.edu.bd/staff/Attendant" target="_blank" class="paragraph tab_text">Supporting Staff</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/committee/syndicate" target="_blank" class="paragraph tab_text">Syndicate Committee</a></li>
-                                <li><a href="http://dsa.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Students’ Affairs</a></li>
-                                <li><a href="http://studentportal.diu.edu.bd/#/login" target="_blank" class="paragraph tab_text">Student Portal</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/sports/sports" target="_blank" class="paragraph tab_text">Sports Activities</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-s" role="tabpanel" aria-labelledby="pills-s-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/staff/Attendant" target="_blank" class="paragraph tab_text">Supporting Staff</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/committee/syndicate" target="_blank" class="paragraph tab_text">Syndicate Committee</a></li>--}}
+{{--                                <li><a href="http://dsa.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Students’ Affairs</a></li>--}}
+{{--                                <li><a href="http://studentportal.diu.edu.bd/#/login" target="_blank" class="paragraph tab_text">Student Portal</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/sports/sports" target="_blank" class="paragraph tab_text">Sports Activities</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-t" role="tabpanel" aria-labelledby="pills-t-tab">
-                            <ul class="no_content">
-                                <li><a href="https://daffodilvarsity.edu.bd/article/transport" target="_blank" class="paragraph tab_text">Transport</a></li>
-                                <li><a href="https://talenthunt.daffodilvarsity.edu.bd/?app=home" target="_blank" class="paragraph tab_text">Talent Hunt Scholarship</a></li>
-                                <li><a href="https://twitter.com/daffodilvarsity" target="_blank" class="paragraph tab_text">Twitter</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-t" role="tabpanel" aria-labelledby="pills-t-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/transport" target="_blank" class="paragraph tab_text">Transport</a></li>--}}
+{{--                                <li><a href="https://talenthunt.daffodilvarsity.edu.bd/?app=home" target="_blank" class="paragraph tab_text">Talent Hunt Scholarship</a></li>--}}
+{{--                                <li><a href="https://twitter.com/daffodilvarsity" target="_blank" class="paragraph tab_text">Twitter</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-u" role="tabpanel" aria-labelledby="pills-u-tab">
-                            <ul class="no_content">
-                                <li><a href="https://daffodilvarsity.edu.bd/article/programs" target="_blank" class="paragraph tab_text">Undergraduate Programs</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/ranking" target="_blank" class="paragraph tab_text">University Rankings</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-u" role="tabpanel" aria-labelledby="pills-u-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/programs" target="_blank" class="paragraph tab_text">Undergraduate Programs</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/ranking" target="_blank" class="paragraph tab_text">University Rankings</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-v" role="tabpanel" aria-labelledby="pills-v-tab">
-                            <ul class="no_content">
-                                <li><a href="https://daffodilvarsity.edu.bd/virtual-tour" target="_blank" class="paragraph tab_text">Virtual Tour</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/visiting-professors" target="_blank" class="paragraph tab_text">Visiting Faculty Members</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/article/valued-employers" target="_blank" class="paragraph tab_text">Valued Employers</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-v" role="tabpanel" aria-labelledby="pills-v-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/virtual-tour" target="_blank" class="paragraph tab_text">Virtual Tour</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/visiting-professors" target="_blank" class="paragraph tab_text">Visiting Faculty Members</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/article/valued-employers" target="_blank" class="paragraph tab_text">Valued Employers</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-w" role="tabpanel" aria-labelledby="pills-w-tab">
-                            <ul class="no_content">
-                                <li><a href="https://daffodilvarsity.edu.bd/master" target="_blank" class="paragraph tab_text">Waiver Calculator (Master’s program)</a></li>
-                                <li><a href="https://daffodilvarsity.edu.bd/undergraduate" target="_blank" class="paragraph tab_text">Waiver Calculator (Undergraduate program)</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-w" role="tabpanel" aria-labelledby="pills-w-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/master" target="_blank" class="paragraph tab_text">Waiver Calculator (Master’s program)</a></li>--}}
+{{--                                <li><a href="https://daffodilvarsity.edu.bd/undergraduate" target="_blank" class="paragraph tab_text">Waiver Calculator (Undergraduate program)</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-x" role="tabpanel" aria-labelledby="pills-x-tab">
-                            <p class="no_content paragraph"> Sorry, nothing found!</p>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-x" role="tabpanel" aria-labelledby="pills-x-tab">--}}
+{{--                            <p class="no_content paragraph"> Sorry, nothing found!</p>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-y" role="tabpanel" aria-labelledby="pills-y-tab">
-                            <ul class="no_content">
-                                <li><a href="https://hall.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Younus Khan Scholar Garden</a></li>
-                                <li><a href="https://www.youtube.com/user/webmasterdiu" target="_blank" class="paragraph tab_text">YouTube</a></li>
-                            </ul>
-                        </div>
+{{--                        <div class="tab-pane fade" id="pills-y" role="tabpanel" aria-labelledby="pills-y-tab">--}}
+{{--                            <ul class="no_content">--}}
+{{--                                <li><a href="https://hall.daffodilvarsity.edu.bd/" target="_blank" class="paragraph tab_text">Younus Khan Scholar Garden</a></li>--}}
+{{--                                <li><a href="https://www.youtube.com/user/webmasterdiu" target="_blank" class="paragraph tab_text">YouTube</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
 
-                        <div class="tab-pane fade" id="pills-z" role="tabpanel" aria-labelledby="pills-z-tab">
-                            <p class="no_content paragraph"> Sorry, nothing found!</p>
-                        </div>
+
+                        {{--                        <div class="tab-pane fade" id="pills-v" role="tabpanel" aria-labelledby="pills-v-tab">--}}
+                        {{--                            <ul class="no_content">--}}
+                        {{--                                <li><a href="https://daffodilvarsity.edu.bd/virtual-tour" target="_blank" class="paragraph tab_text">Virtual Tour</a></li>--}}
+                        {{--                                <li><a href="https://daffodilvarsity.edu.bd/article/visiting-professors" target="_blank" class="paragraph tab_text">Visiting Faculty Members</a></li>--}}
+                        {{--                                <li><a href="https://daffodilvarsity.edu.bd/article/valued-employers" target="_blank" class="paragraph tab_text">Valued Employers</a></li>--}}
+                        {{--                            </ul>--}}
+                        {{--                        </div>--}}
+
+
                     </div>
                 </div>
             </div>
