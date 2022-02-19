@@ -17,7 +17,9 @@
                     </div>
                     <div class="cart_details">
                         <h3 class="heading_three mb-4"><a href="https://hall.daffodilvarsity.edu.bd/" class="hover_text">{{ $data->title }}</a></h3>
-                        <p class="paragraph mb-2 aos-init aos-animate">{{ $data->content }}</p>
+                        <p class="paragraph mb-2 aos-init aos-animate">
+                            {!! \Illuminate\Support\Str::limit(strip_tags($data->content,150))  !!}
+                        </p>
                         @if($data->external_link_text)
                             <a href="{{$data->external_link}}" class="btn regular_btn" >{{$data->external_link_text}}</a>
                         @endif

@@ -17,7 +17,11 @@ $i=100;
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="resource_details_right">
                         <h2 class="heading_two mb-3" data-aos="fade-up" data-aos-delay="100">{{ $data->title }}</h2>
-                        <p class="paragraph mb-4" data-aos="fade-up" data-aos-delay="200">{!! $data->content !!}</p>
+                        <p class="paragraph mb-4" data-aos="fade-up" data-aos-delay="200">
+
+                            {!! \Illuminate\Support\Str::limit(strip_tags($data->content,150))  !!}
+
+                        </p>
                         @if($data->external_link)
                         <a href="{{$data->external_link}}" class="btn regular_btn" data-aos="fade-up" data-aos-delay="300">{{$data->external_link_text}}</a>
                         @endif
