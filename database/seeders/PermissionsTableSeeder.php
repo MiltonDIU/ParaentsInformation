@@ -169,48 +169,67 @@ class PermissionsTableSeeder extends Seeder
 //                'title' => 'slider_access',
 //            ],
 
-            [
-                'id'    => 40,
-                'title' => 'link_category_create',
-            ],
-            [
-                'id'    => 41,
-                'title' => 'link_category_edit',
-            ],
-            [
-                'id'    => 42,
-                'title' => 'link_category_show',
-            ],
-            [
-                'id'    => 43,
-                'title' => 'link_category_delete',
-            ],
-            [
-                'id'    => 44,
-                'title' => 'link_category_access',
-            ],
-            [
-                'id'    => 45,
-                'title' => 'link_create',
-            ],
-            [
-                'id'    => 46,
-                'title' => 'link_edit',
-            ],
-            [
-                'id'    => 47,
-                'title' => 'link_show',
-            ],
-            [
-                'id'    => 48,
-                'title' => 'link_delete',
-            ],
-            [
-                'id'    => 49,
-                'title' => 'link_access',
-            ],
+//            [
+//                'id'    => 40,
+//                'title' => 'link_category_create',
+//            ],
+//            [
+//                'id'    => 41,
+//                'title' => 'link_category_edit',
+//            ],
+//            [
+//                'id'    => 42,
+//                'title' => 'link_category_show',
+//            ],
+//            [
+//                'id'    => 43,
+//                'title' => 'link_category_delete',
+//            ],
+//            [
+//                'id'    => 44,
+//                'title' => 'link_category_access',
+//            ],
+//            [
+//                'id'    => 45,
+//                'title' => 'link_create',
+//            ],
+//            [
+//                'id'    => 46,
+//                'title' => 'link_edit',
+//            ],
+//            [
+//                'id'    => 47,
+//                'title' => 'link_show',
+//            ],
+//            [
+//                'id'    => 48,
+//                'title' => 'link_delete',
+//            ],
+//            [
+//                'id'    => 49,
+//                'title' => 'link_access',
+//            ],
 
-
+            [
+                'id'    => 50,
+                'title' => 'news_letter_create',
+            ],
+            [
+                'id'    => 51,
+                'title' => 'news_letter_edit',
+            ],
+            [
+                'id'    => 52,
+                'title' => 'news_letter_show',
+            ],
+            [
+                'id'    => 53,
+                'title' => 'news_letter_delete',
+            ],
+            [
+                'id'    => 54,
+                'title' => 'news_letter_access',
+            ],
 
 
         ];

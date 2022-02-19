@@ -155,6 +155,17 @@
             </li>
         @endcan
 
+        @can('news_letter_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.news-letters.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/news-letters") || request()->is("admin/news-letters/*") ? "active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+                    </i>
+                    <p>
+                        {{ trans('cruds.newsLetter.title') }}
+                    </p>
+                </a>
+            </li>
+        @endcan
 
         <li class="c-sidebar-nav-item">
             <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">

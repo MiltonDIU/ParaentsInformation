@@ -15,7 +15,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\SlidersController;
 use App\Http\Controllers\Admin\LinkCategoryController;
 use App\Http\Controllers\Admin\LinksController;
-
+use App\Http\Controllers\Admin\NewsLetterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,7 +57,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
         'sliders' => SlidersController::class,
         'link-categories' => LinkCategoryController::class,
         'links' => LinksController::class,
+        'news-letters' => NewsLetterController::class,
     ]);
+
+    // News Letter
+    Route::delete('news-letters/destroy', [NewsLetterController::class, 'massDestroy'])->name('news-letters.massDestroy');
+    Route::post('news-letters/media', [NewsLetterController::class, 'storeMedia'])->name('news-letters.storeMedia');
+    Route::post('news-letters/ckmedia', [NewsLetterController::class, 'storeCKEditorImages'])->name('news-letters.storeCKEditorImages');
+
+
     // Sliders
     Route::delete('sliders/destroy', [SlidersController::class, 'massDestroy'])->name('sliders.massDestroy');
     Route::post('sliders/media', [SlidersController::class, 'storeMedia'])->name('sliders.storeMedia');
