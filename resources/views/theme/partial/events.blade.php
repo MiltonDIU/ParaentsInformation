@@ -1,6 +1,6 @@
 <section id="events_part" class="mg_top">
     <?php
-    $data = \App\Models\ApiModel::events();
+    $data = \App\Models\ApiModel::events(3);
     $i=100;
     $j=0;
     ?>

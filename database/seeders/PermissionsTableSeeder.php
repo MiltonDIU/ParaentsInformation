@@ -230,8 +230,6 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 54,
                 'title' => 'news_letter_access',
             ],
-
-
         ];
 
         Permission::insert($permissions);

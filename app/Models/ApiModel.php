@@ -9,10 +9,11 @@ class ApiModel extends Model
 {
     use HasFactory;
 
-    public static function events(){
+    public static function events($total){
+        $token = 'daffodilvarsity-parents';
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://daffodilvarsity.edu.bd/api/v1/events',
+            CURLOPT_URL => 'https://daffodilvarsity.edu.bd/api/v1/events/'.$total.'/'.$token,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

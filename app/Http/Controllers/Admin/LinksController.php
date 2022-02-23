@@ -53,6 +53,7 @@ class LinksController extends Controller
 
     public function update(UpdateLinkRequest $request, Link $link)
     {
+
         $link->update($request->all());
         $link->link_categories()->sync($request->input('link_categories', []));
 
