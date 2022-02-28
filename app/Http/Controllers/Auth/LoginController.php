@@ -38,7 +38,7 @@ class LoginController extends Controller
                   return '/admin';
                   break;
               case 'Parent':
-                  return '/parent';
+                  return '/newsfeed';
                   break;
               default:
                   return '/home';

@@ -35,7 +35,7 @@
 
                                 <div class="edit_input full_width mb-3">
                                     <label for="emailAddress" class="paragraph edit_input_text">Email Address</label>
-                                    <input type="email" id="emailAddress" name="email" value="{{$user->email}}" class="edit_input_field">
+                                    <input type="email" readonly id="emailAddress" name="email" value="{{$user->email}}" class="edit_input_field">
                                 </div>
 
                                 <div class="edit_input full_width mb-3">
@@ -48,6 +48,18 @@
                                 <div class="edit_input full_width mb-4">
                                     <label for="studentId" class="paragraph edit_input_text">Student ID <span>(Optional)</span></label>
                                     <input type="text" id="studentId" name="student_id" value="@if($user->profile){{$user->profile->student_id}}@endif"  class="edit_input_field">
+                                </div>
+
+                                <div class="edit_input full_width mb-4">
+                                    <label for="studentId" class="paragraph edit_input_text">If you want to get the newsletter<span>(Optional)</span></label>
+
+
+                                    @foreach(App\Models\Link::IS_ACTIVE_RADIO as $key => $label)
+                                            <input style="width: 30px; height: 30px" class="form-check-input" type="radio" id="if_notification_{{ $key }}" name="if_notification" value="{{ $key }}" {{ old('if_notification', $user->if_notification) === (string) $key ? 'checked' : '' }} required>
+                                         <span style="margin-left: -80px">  {{$label}}</span>
+                                    @endforeach
+
+
                                 </div>
 
                                 <div class="edit_buttons">

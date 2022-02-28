@@ -95,6 +95,28 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.linkCategory.fields.image_position_helper') }}</span>
                 </div>
+
+
+                <div class="form-group">
+                    <label for="links">{{ trans('cruds.linkCategory.fields.title') }}</label>
+                    <div style="padding-bottom: 4px">
+                        <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
+                        <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
+                    </div>
+                    <select class="form-control select2 {{ $errors->has('links') ? 'is-invalid' : '' }}" name="links[]" id="links" multiple>
+                        @foreach($links as $id => $link)
+                            <option value="{{ $id }}" {{ (in_array($id, old('links', [])) || $linkCategory->linkCategoryLinks->contains($id)) ? 'selected' : '' }}>{{ $link }}</option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('links'))
+                        <span class="text-danger">{{ $errors->first('links') }}</span>
+                    @endif
+                    <span class="help-block">{{ trans('cruds.linkCategory.fields.title_helper') }}</span>
+                </div>
+
+
+
+
                 <div class="form-group">
                     <label>{{ trans('cruds.linkCategory.fields.is_utilities') }}</label>
                     @foreach(App\Models\LinkCategory::IS_UTILITIES_RADIO as $key => $label)

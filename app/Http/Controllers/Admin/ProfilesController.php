@@ -53,7 +53,7 @@ class ProfilesController extends Controller
     }
     public function update(UpdateProfileRequest $request){
        $user = User::find(auth()->id());
-        $user->update($request->only('name'));
+        $user->update($request->only('name','if_notification'));
         $profile = Profile::where('user_id',auth()->id())->get()->first();
         if ($profile==null){
             $data  = $request->all();
@@ -74,16 +74,15 @@ class ProfilesController extends Controller
                     if ($profile->avatar) {
                         $profile->avatar->delete();
                     }
-
                     $profile->addMedia(storage_path('tmp/uploads/' . $request->input('avatar')))->toMediaCollection('avatar');
                 }
             } elseif ($profile->avatar) {
                 $profile->avatar->delete();
             }
-
             $message ="Your profile update successfully";
         }
-        return redirect()->route('profile.my-profile.edit')->with('message', $message);
+//        return redirect()->route('profile.my-profile.edit')->with('message', $message);
+        return redirect()->back()->with('message', $message);
 
     }
 }
