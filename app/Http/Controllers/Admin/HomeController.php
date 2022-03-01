@@ -19,6 +19,10 @@ class HomeController extends Controller
         return view('theme.newsfeed', compact('newsLetters'));
     }
 
+    public function newsfeedDetails($id){
+        $news = NewsLetter::find($id);
+        return view('theme.newsfeed-details', compact('news'));
+    }
     public function profile(){
         $user = Auth::user();
         return view('theme.profile',compact('user'));

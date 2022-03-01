@@ -43,11 +43,8 @@
 
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
 
-
-
-@foreach($newsLetters as $key=>$news)
                     <div class="article_main mb-2">
-
+@if($news->picture)
                         <div id="demo" class="carousel slide" data-bs-ride="carousel">
                             <!-- Indicators/dots -->
                             <div class="carousel-indicators">
@@ -56,6 +53,7 @@
                                 @endforeach
                             </div>
                             <!-- The slideshow/carousel -->
+
                             <div class="carousel-inner">
                                 @foreach($news->picture as $key => $media)
                                 <div class="carousel-item @if($key==0) active @endif">
@@ -76,21 +74,17 @@
 {{--                        <div class="article_img">--}}
 {{--                            <img src="{{ url('assets/theme/images/article1.jpg') }}" alt="article 1">--}}
 {{--                        </div>--}}
+                        @endif
 
                         <div class="article_details background_radius">
                             <h3 class="paragraph text_bold mb-2">{{$news->title}}</h3>
 
                             <div class="news_feed_text">
-
-                                {!! \Illuminate\Support\Str::limit(strip_tags($news->content,400))  !!}
+                                {!! $news->content !!}
                                 <a href="{{$news->external_link}}" class="read_more_text">{{$news->external_link_text}}</a></div>
                         </div>
 
                     </div>
-
-                    @endforeach
-
-
                 </div>
 
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12">

@@ -2,19 +2,40 @@
 
 namespace App\Models;
 
+use App\Notifications\NewsLetterNotify;
+use App\Notifications\VerifyUserNotification;
+use Carbon\Carbon;
 use \DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notification;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class NewsLetter extends Model implements HasMedia
 {
     use SoftDeletes;
     use InteractsWithMedia;
     use HasFactory;
+    use Notifiable;
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        self::created(function (NewsLetter $newsLetter) {
+            $subscribers = User::where('if_notification','1')->where('verified','1')->where('approved','1')->get();
+            foreach ($subscribers as $key=> $newsLetter){
+                $newsLetter->notify(new NewsLetterNotify($newsLetter));
+            }
+        });
+
+    }
 
     public const IS_ACTIVE_RADIO = [
         '1' => 'Yes',
@@ -66,4 +87,5 @@ class NewsLetter extends Model implements HasMedia
     {
         return $date->format('Y-m-d H:i:s');
     }
+
 }
