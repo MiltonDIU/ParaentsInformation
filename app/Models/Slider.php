@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Auditable;
 use \DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,6 +16,7 @@ class Slider extends Model implements HasMedia
     use SoftDeletes;
     use InteractsWithMedia;
     use HasFactory;
+    use Auditable;
 
     public const IS_ACTIVE_RADIO = [
         '1' => 'Yes',

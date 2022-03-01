@@ -53,7 +53,7 @@
                                 {{ trans('cruds.profile.fields.country') }}
                             </th>
                             <td>
-                                {{ $user->profile->country->nationality ?? '' }}
+                                {{ $user->profile->country->nationality  }}
                             </td>
                         </tr>
                         <tr>

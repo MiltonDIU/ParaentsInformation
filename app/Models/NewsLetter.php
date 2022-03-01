@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Notifications\NewsLetterNotify;
 use App\Notifications\VerifyUserNotification;
+use App\Traits\Auditable;
 use Carbon\Carbon;
 use \DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,6 +25,7 @@ class NewsLetter extends Model implements HasMedia
     use InteractsWithMedia;
     use HasFactory;
     use Notifiable;
+    use Auditable;
 
     public function __construct(array $attributes = [])
     {

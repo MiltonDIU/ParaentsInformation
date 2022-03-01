@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Auditable;
 use \DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,6 +12,7 @@ class Link extends Model
 {
     use SoftDeletes;
     use HasFactory;
+    use Auditable;
 
     public const IS_ACTIVE_RADIO = [
         '1' => 'Yes',

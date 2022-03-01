@@ -62,7 +62,13 @@
                     <select class="form-control select2 {{ $errors->has('country') ? 'is-invalid' : '' }}" name="country_id" id="country_id" required>
 
                         @foreach($countries as $id => $country)
-                            <option value="{{ $id }}" {{ (old('country_id') ? old('country_id') : auth()->user()->profile!=null?auth()->user()->profile->country->id :'' ) == $id ? 'selected' : '' }}>{{ $country }}</option>
+                            <option value="{{ $id }}"
+                            @if(auth()->user()->profile!=null)
+                                @if(auth()->user()->profile->country_id!=null))
+                                {{ (old('country_id') ? old('country_id') : auth()->user()->profile!=null?auth()->user()->profile->country->id :'' ) == $id ? 'selected' : '' }}
+                               @endif
+                                @endif >
+                                {{ $country }}</option>
                         @endforeach
                     </select>
                     @if($errors->has('country'))
