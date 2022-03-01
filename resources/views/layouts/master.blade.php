@@ -50,10 +50,23 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{route('profile')}}"><i class="fas fa-pencil-alt"></i>Edit Profile</a></li>
+
                             <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i>Log Out</a>
+                                <a class="dropdown-item"  href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                                    <i class="fas fa-sign-out-alt"></i>
+
+                                    </i>
+                                    {{ trans('global.logout') }}
+                                </a>
+
                             </li>
+
+
+
                         </ul>
+                        <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -88,8 +101,7 @@
     <!-- ------------------------------ Return to Top end ------------------------------ -->
     <div class="container">
         <p class="footer_text">
-            Copyright © 2022 Daffodil International University. All
-            Rights Reserved.
+            {{ Site::config()->site_title, 'Copyright © 2022 Daffodil International University. All Rights Reserved.' }}
         </p>
     </div>
 </footer>
