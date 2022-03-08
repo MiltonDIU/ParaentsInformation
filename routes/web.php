@@ -16,6 +16,8 @@ use App\Http\Controllers\Admin\SlidersController;
 use App\Http\Controllers\Admin\LinkCategoryController;
 use App\Http\Controllers\Admin\LinksController;
 use App\Http\Controllers\Admin\NewsLetterController;
+use App\Http\Controllers\Admin\MessengerController;
+use App\Http\Controllers\Admin\FeedbackCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,7 +61,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
         'link-categories' => LinkCategoryController::class,
         'links' => LinksController::class,
         'news-letters' => NewsLetterController::class,
+        'feedback-categories' => FeedbackCategoryController::class,
+
     ]);
+
+// Feedback Category
+    Route::delete('feedback-categories/destroy',  [FeedbackCategoryController::class, 'massDestroy'])->name('feedback-categories.massDestroy');
 
     // News Letter
     Route::delete('news-letters/destroy', [NewsLetterController::class, 'massDestroy'])->name('news-letters.massDestroy');
@@ -100,7 +107,20 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('profiles/ckmedia', [ProfilesController::class, 'storeCKEditorImages'])->name('profiles.storeCKEditorImages');
 
     // Audit Logs
-    //Route::resource('audit-logs', 'AuditLogsController', ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
+    Route::resource('audit-logs', 'AuditLogsController', ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
+
+//messages
+    Route::get('messenger', [MessengerController::class,'index'])->name('messenger.index');
+    Route::get('messenger/create', [MessengerController::class,'createTopic'])->name('messenger.createTopic');
+    Route::post('messenger', [MessengerController::class,'storeTopic'])->name('messenger.storeTopic');
+    Route::get('messenger/inbox', [MessengerController::class,'showInbox'])->name('messenger.showInbox');
+    Route::get('messenger/outbox', [MessengerController::class,'showOutbox'])->name('messenger.showOutbox');
+    Route::get('messenger/{topic}', [MessengerController::class,'showMessages'])->name('messenger.showMessages');
+    Route::delete('messenger/{topic}', [MessengerController::class,'destroyTopic'])->name('messenger.destroyTopic');
+    Route::post('messenger/{topic}/reply', [MessengerController::class,'replyToTopic'])->name('messenger.reply');
+    Route::get('messenger/{topic}/reply', [MessengerController::class,'showReply'])->name('messenger.showReply');
+
+
 });
 
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {

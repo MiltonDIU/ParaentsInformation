@@ -166,6 +166,29 @@
                 </a>
             </li>
         @endcan
+        @can('feedback_category_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.feedback-categories.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/feedback-categories") || request()->is("admin/feedback-categories/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.feedbackCategory.title') }}
+                </a>
+            </li>
+        @endcan
+        @php($unread = \App\Models\QaTopic::unreadCount())
+        <li class="c-sidebar-nav-item">
+            <a href="{{ route("admin.messenger.index") }}" class="{{ request()->is("admin/messenger") || request()->is("admin/messenger/*") ? "c-active" : "" }} c-sidebar-nav-link">
+                <i class="c-sidebar-nav-icon fa-fw fa fa-envelope">
+
+                </i>
+                <span>{{ trans('global.messages') }}</span>
+                @if($unread > 0)
+                    <strong>( {{ $unread }} )</strong>
+                @endif
+
+            </a>
+        </li>
 
         <li class="c-sidebar-nav-item">
             <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">

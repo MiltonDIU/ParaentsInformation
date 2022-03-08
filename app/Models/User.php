@@ -49,7 +49,8 @@ class User extends Authenticatable
         'updated_at',
         'deleted_at',
         'approved',
-        'if_notification'
+        'if_notification',
+        'if_admin_message'
     ];
 
     protected function serializeDate(DateTimeInterface $date)

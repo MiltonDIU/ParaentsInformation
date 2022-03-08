@@ -50,6 +50,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{route('profile')}}"><i class="fas fa-pencil-alt"></i>Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.messenger.index')}}"><i class="fas fa-envelope"></i>Message</a></li>
 
                             <li>
                                 <a class="dropdown-item"  href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
