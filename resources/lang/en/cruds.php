@@ -381,4 +381,25 @@ return [
             'deleted_at_helper'        => ' ',
         ],
     ],
+
+    'feedback' => [
+        'title'          => 'Feedback',
+        'title_singular' => 'Feedback',
+        'fields'         => [
+            'id'                       => 'ID',
+            'id_helper'                => ' ',
+            'feedback_category'        => 'Feedback Category',
+            'feedback_category_helper' => ' ',
+            'content'                  => 'Content',
+            'content_helper'           => ' ',
+            'created_at'               => 'Created at',
+            'created_at_helper'        => ' ',
+            'updated_at'               => 'Updated at',
+            'updated_at_helper'        => ' ',
+            'deleted_at'               => 'Deleted at',
+            'deleted_at_helper'        => ' ',
+            'user'                     => 'User',
+            'user_helper'              => ' ',
+        ],
+    ],
 ];

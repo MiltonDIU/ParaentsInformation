@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\LinksController;
 use App\Http\Controllers\Admin\NewsLetterController;
 use App\Http\Controllers\Admin\MessengerController;
 use App\Http\Controllers\Admin\FeedbackCategoryController;
+use App\Http\Controllers\Admin\FeedbackController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,8 +63,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
         'links' => LinksController::class,
         'news-letters' => NewsLetterController::class,
         'feedback-categories' => FeedbackCategoryController::class,
+        'feedbacks' => FeedbackController::class,
 
     ]);
+    // Feedback
+    Route::delete('feedbacks/destroy',  [FeedbackController::class, 'massDestroy'])->name('feedbacks.massDestroy');
 
 // Feedback Category
     Route::delete('feedback-categories/destroy',  [FeedbackCategoryController::class, 'massDestroy'])->name('feedback-categories.massDestroy');

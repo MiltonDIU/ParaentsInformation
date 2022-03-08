@@ -8,18 +8,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FeedbackCategory extends Model
+class Feedback extends Model
 {
     use SoftDeletes;
     use Auditable;
     use HasFactory;
 
-    public const IS_ACTIVE_RADIO = [
-        '1' => 'Yes',
-        '0' => 'No',
-    ];
-
-    public $table = 'feedback_categories';
+    public $table = 'feedbacks';
 
     protected $dates = [
         'created_at',
@@ -28,21 +23,22 @@ class FeedbackCategory extends Model
     ];
 
     protected $fillable = [
-        'title',
-        'slug',
-        'is_active',
+        'feedback_category_id',
+        'content',
+        'user_id',
         'created_at',
         'updated_at',
         'deleted_at',
     ];
 
-    public function feedbackCategoryQaTopics()
+    public function feedback_category()
     {
-        return $this->hasMany(QaTopic::class, 'feedback_category_id', 'id');
+        return $this->belongsTo(FeedbackCategory::class, 'feedback_category_id');
     }
-    public function feedbackCategoryFeedbacks()
+
+    public function user()
     {
-        return $this->hasMany(Feedback::class, 'feedback_category_id', 'id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     protected function serializeDate(DateTimeInterface $date)

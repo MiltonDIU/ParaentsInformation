@@ -230,25 +230,45 @@ class PermissionsTableSeeder extends Seeder
 //                'id'    => 54,
 //                'title' => 'news_letter_access',
 //            ],
+//            [
+//                'id'    => 55,
+//                'title' => 'feedback_category_create',
+//            ],
+//            [
+//                'id'    => 56,
+//                'title' => 'feedback_category_edit',
+//            ],
+//            [
+//                'id'    => 57,
+//                'title' => 'feedback_category_show',
+//            ],
+//            [
+//                'id'    => 58,
+//                'title' => 'feedback_category_delete',
+//            ],
+//            [
+//                'id'    => 59,
+//                'title' => 'feedback_category_access',
+//            ],
             [
-                'id'    => 55,
-                'title' => 'feedback_category_create',
+                'id'    => 60,
+                'title' => 'feedback_create',
             ],
             [
-                'id'    => 56,
-                'title' => 'feedback_category_edit',
+                'id'    => 61,
+                'title' => 'feedback_edit',
             ],
             [
-                'id'    => 57,
-                'title' => 'feedback_category_show',
+                'id'    => 62,
+                'title' => 'feedback_show',
             ],
             [
-                'id'    => 58,
-                'title' => 'feedback_category_delete',
+                'id'    => 63,
+                'title' => 'feedback_delete',
             ],
             [
-                'id'    => 59,
-                'title' => 'feedback_category_access',
+                'id'    => 64,
+                'title' => 'feedback_access',
             ],
         ];
 
