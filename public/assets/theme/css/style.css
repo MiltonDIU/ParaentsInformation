@@ -36,12 +36,25 @@ p {
 }
 
 .navbar .nav-container {
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .navbar .navbar-brand img {
     width: 200px;
     height: auto;
+}
+
+.sign_button a {
+    margin-left: 20px;
+}
+
+.s_btn {
+    background-color: #fff !important;
+    color: #2E3094 !important;
+}
+
+.s_btn:hover {
+    color: #FFBC42 !important;
 }
 
 /* ----------------------- Common CSS Start ----------------------- */
@@ -394,8 +407,8 @@ p {
 
 footer {
     background-color: #232323;
-    text-align: center;
     margin-top: 120px;
+    padding: 100px 0;
 }
 
 .footer_after_login {
@@ -408,7 +421,67 @@ footer {
     line-height: 1.8;
     font-weight: 400;
     color: #fff;
-    padding: 32px 0;
+}
+
+.f_p_top {
+    padding-top: 50px;
+}
+
+.text_white {
+    color: #fff;
+}
+
+.f_logo {
+    width: 150px;
+}
+
+.f_logo img {
+    width: 100%;
+    display: block;
+}
+
+.f_links span {
+    color: rgba(255, 255, 255, .5);
+    margin-right: 10px;
+}
+
+.f_links .footer_text {
+    margin: 10px 0;
+}
+
+.f_inner {
+    margin-right: 30px;
+}
+
+footer a:hover {
+    color: #FFBC42;
+}
+
+.f_social {
+    margin-right: 50px;
+}
+
+.social_box  {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    transition: all linear .2s;
+}
+
+.social_box i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.social_box:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 /* ----------------------- footer end ----------------------- */
 

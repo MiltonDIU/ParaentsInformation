@@ -83,6 +83,10 @@
             <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="{{ url('assets/theme/images//Parents Experience Logo.png')}}" alt="DIU Parents Experience"/>
             </a>
+            <div class="sign_button">
+                <a class="btn regular_btn" href="{{route('login')}}">Sign In</a>
+                <a class="btn regular_btn s_btn" href="{{ route('register') }}">Sign Up</a>
+            </div>
         </div>
     </nav>
 @endif
@@ -102,11 +106,80 @@
         <i class="fas fa-chevron-up"></i>
     </a>
     <!-- ------------------------------ Return to Top end ------------------------------ -->
-    <div class="container">
-        <p class="footer_text">
-            {{ Site::config()->site_title, 'Copyright © 2022 Daffodil International University. All Rights Reserved.' }}
-        </p>
-    </div>
+{{--    <div class="container">--}}
+{{--        <p class="footer_text">--}}
+{{--            {{ Site::config()->site_title, 'Copyright © 2022 Daffodil International University. All Rights Reserved.' }}--}}
+{{--        </p>--}}
+{{--    </div>--}}
+
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="f_inner">
+                    <div class="footer_logo_main">
+                        <div class="f_logo">
+                            <img src="{{ url('assets/theme/images//Parents Experience Logo.png')}}" alt="DIU">
+                        </div>
+                    </div>
+
+                    <p class="footer_text f_p_top"> {{ Site::config()->copyright??'Copyright © 2022 Daffodil International University. All Rights Reserved.' }}</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="f_inner">
+                    <p class="heading_three text_white">Support</p>
+
+                    <div class="f_links f_p_top">
+                        <p class="footer_text"><span>Hotline:</span> {{ Site::config()->mobile?? '09617901212' }}</p>
+                        <p class="footer_text"><span>Email:</span>{{ Site::config()->mobile??'info@daffodilvarsity.edu.bd' }}</p>
+                        <a  class="footer_text" target="_blank" href="https://pd.daffodilvarsity.edu.bd/support_ticket">Helpdesk</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="f_inner">
+                    <p class="heading_three text_white">Connect With Us</p>
+
+                    <div class="f_social f_p_top">
+                        <a class="social_box" href="https://www.facebook.com/daffodilvarsity.edu.bd" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a class="social_box" href="https://twitter.com/daffodilvarsity" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a class="social_box" href="https://www.instagram.com/daffodil.university/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a class="social_box" href="https://www.youtube.com/user/webmasterdiu" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+                        <a class="social_box" href="https://www.linkedin.com/company/daffodil-international-university/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a class="social_box" href="https://www.pinterest.com/daffodilvarsity/" target="_blank">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+
+                        <a class="social_box" href="https://daffodilvarsity.edu.bd/article/whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                        <a class="social_box" href="https://gmail.com/" target="_blank">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 </footer>
 <!-- ----------------------- footer end ----------------------- -->
 
