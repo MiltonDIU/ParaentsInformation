@@ -45,4 +45,9 @@ class Feedback extends Model
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public static function feedbackCategories(){
+        $categories = FeedbackCategory::where('is_active','1')->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+        return $categories;
+    }
 }

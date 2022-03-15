@@ -32,5 +32,7 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('theme.profile',compact('user'));
     }
-
+    public function feedback(){
+        return view('theme.feedback');
+    }
 }

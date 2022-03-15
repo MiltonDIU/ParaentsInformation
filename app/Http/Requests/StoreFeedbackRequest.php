@@ -21,10 +21,14 @@ class StoreFeedbackRequest extends FormRequest
                 'required',
                 'integer',
             ],
-            'content' => [
-                'string',
-                'required',
-            ],
+            'content' => ['string','required','max:100'],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'feedback_category_id.required'=>'',
+            'feedback_category_id.integer'=>'',
         ];
     }
 }

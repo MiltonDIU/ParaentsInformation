@@ -81,8 +81,7 @@ class FeedbackController extends Controller
         $data = $request->all();
         $data['user_id'] =Auth::id();
         $feedback = Feedback::create($data);
-
-        return redirect()->route('admin.feedbacks.index');
+        return redirect()->back()->with('message', 'Your feedback has been stored on our system ');
     }
 
     public function edit(Feedback $feedback)

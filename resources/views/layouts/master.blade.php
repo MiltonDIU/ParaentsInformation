@@ -21,6 +21,8 @@
     <link rel="stylesheet" href=" {{ url('assets/theme/css/responsive.css')}}">
 
     @stack('style')
+    @stack('feedback')
+
 </head>
 <body>
 <!-- ----------------------- preloader start ----------------------- -->
@@ -50,7 +52,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{route('profile')}}"><i class="fas fa-pencil-alt"></i>Edit Profile</a></li>
-                            <li><a class="dropdown-item" href="{{route('admin.messenger.index')}}"><i class="fas fa-envelope"></i>Message</a></li>
+                            <li><a class="dropdown-item" href="{{route('feedback')}}"><i class="fas fa-envelope"></i>Feedback</a></li>
 
                             <li>
                                 <a class="dropdown-item"  href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
@@ -92,7 +94,7 @@
 <!-- ----------------------- Navbar end ----------------------- -->
 
 @yield('content')
-
+@include('theme.partial.feedback')
 <!-- ----------------------- footer start ----------------------- -->
 <footer>
     <!-- ------------------------------ Return to Top start ------------------------------ -->
