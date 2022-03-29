@@ -56,7 +56,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
         'permissions' => PermissionsController::class,
         'roles' => RolesController::class,
         'users' => UsersController::class,
-        'audit-logs' => AuditLogsController::class,
         'countries' => CountriesController::class,
         'profiles' => ProfilesController::class,
         'sliders' => SlidersController::class,
@@ -112,7 +111,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::post('profiles/ckmedia', [ProfilesController::class, 'storeCKEditorImages'])->name('profiles.storeCKEditorImages');
 
     // Audit Logs
-    Route::resource('audit-logs', 'AuditLogsController', ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
+    Route::resource('audit-logs', AuditLogsController::class, ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
 
 //messages
     Route::get('messenger', [MessengerController::class,'index'])->name('messenger.index');
