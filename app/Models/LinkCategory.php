@@ -100,6 +100,6 @@ class LinkCategory extends Model implements HasMedia
         return LinkCategory::where('id',$id)->where('page_name',$page)->where('is_active','1')->where('is_utilities',$is_utilities)->first();
     }
     public static function utilities($page,$is_utilities){
-        return LinkCategory::where('page_name',$page)->where('is_active','1')->where('is_utilities',$is_utilities)->get();
+        return LinkCategory::where('page_name',$page)->where('is_active','1')->where('is_utilities',$is_utilities)->orderBy('position','asc')->get();
     }
 }

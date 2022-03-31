@@ -29,7 +29,9 @@ $i=100;
                         @if(count($data->linkCategoryLinks)>0)
                             <ul class="resource_links">
                                 @foreach($data->linkCategoryLinks as $link)
+                                    @if($link->link!="#")
                                     <li class="paragraph" data-aos="fade-up" data-aos-delay="{!! $i+=100 !!}"><a target="_blank" href="{{$link->link}}">{{ $link->title }}</a></li>
+                                    @endif
                                 @endforeach
                             </ul>
                         @endif
@@ -48,7 +50,9 @@ $i=100;
                   @if(count($data->linkCategoryLinks)>0)
                         <ul class="resource_links">
                             @foreach($data->linkCategoryLinks as $link)
+                                @if($link->link!="#")
                             <li class="paragraph" data-aos="fade-up" data-aos-delay="{!! $i+=100 !!}"><a target="_blank" href="{{$link->link}}">{{ $link->title }}</a></li>
+                                @endif
                             @endforeach
                         </ul>
                         @endif

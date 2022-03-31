@@ -35,7 +35,8 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand after_login" href="{{ route('home') }}">
-                <img src="{{ url('assets/theme/images//Parents Experience Logo.png')}}" alt="DIU Parents Experience"/>
+                <img src="{!! Site::config()->logo!=null?Site::config()->logo->getUrl()??url('assets/theme/images//Parents Experience Logo.png'):url('assets/theme/images//Parents Experience Logo.png')!!}" alt="DIU Parents Experience"/>
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
@@ -81,7 +82,8 @@
     <nav class="navbar sticky-top">
         <div class="container nav-container">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ url('assets/theme/images//Parents Experience Logo.png')}}" alt="DIU Parents Experience"/>
+                <img src="{!! Site::config()->logo!=null?Site::config()->logo->getUrl()??url('assets/theme/images//Parents Experience Logo.png'):url('assets/theme/images//Parents Experience Logo.png')!!}" alt="DIU Parents Experience"/>
+
             </a>
             <div class="sign_button">
                 <a class="btn regular_btn" href="{{route('login')}}">Sign In</a>
@@ -118,7 +120,8 @@
                 <div class="f_inner">
                     <div class="footer_logo_main">
                         <div class="f_logo">
-                            <img src="{{ url('assets/theme/images//Parents Experience Logo.png')}}" alt="DIU">
+                            <img src="{!! Site::config()->logo!=null?Site::config()->logo->getUrl()??url('assets/theme/images//Parents Experience Logo.png'):url('assets/theme/images//Parents Experience Logo.png')!!}" alt="DIU Parents Experience"/>
+
                         </div>
                     </div>
 

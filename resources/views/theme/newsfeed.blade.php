@@ -128,7 +128,7 @@
                                 </div>
 
                                 <div class="c_link event_title">
-                                    <a href="#" class="paragraph hover_text">Calendar of Events</a>
+                                    <a href="https://docs.google.com/document/d/1aqo2o_U-WSpBRZZ6RR1NCgM7AwATMA5YPm1zxda139k/edit?usp=sharing" target="_blank" class="paragraph hover_text">Calendar of Events</a>
                                 </div>
                             </div>
                         </div>
