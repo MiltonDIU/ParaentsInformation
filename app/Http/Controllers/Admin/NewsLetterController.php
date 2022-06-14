@@ -36,7 +36,6 @@ class NewsLetterController extends Controller
     public function store(StoreNewsLetterRequest $request)
     {
         $newsLetter = NewsLetter::create($request->all());
-
         foreach ($request->input('picture', []) as $file) {
             $newsLetter->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('picture');
         }

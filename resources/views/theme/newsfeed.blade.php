@@ -72,19 +72,26 @@
                                 <span class="carousel-control-next-icon"></span>
                             </button>
                         </div>
-
-{{--                        <div class="article_img">--}}
-{{--                            <img src="{{ url('assets/theme/images/article1.jpg') }}" alt="article 1">--}}
-{{--                        </div>--}}
-
                         <div class="article_details background_radius">
                             <h3 class="paragraph text_bold mb-2">{{$news->title}}</h3>
 
                             <div class="news_feed_text">
 
-                                {!! \Illuminate\Support\Str::limit(strip_tags($news->content,400))  !!}
-                                <a href="{{$news->external_link}}" class="read_more_text">{{$news->external_link_text}}</a></div>
+                                {!! \Illuminate\Support\Str::limit(strip_tags($news->content,600))  !!}
+
+
+    @if($news->content==null)
+        @if("#"!=$news->external_link and $news->external_link!=null)
+            <a href="{{$news->external_link}}" class="read_more_text">{{$news->external_link_text}}</a>
+        @endif
+    @else
+        <a href="{{route('newsfeed-details',[$news->id,$news->title])}}"> Read More </a>
+    @endif
+                            </div>
                         </div>
+
+
+
 
                     </div>
 

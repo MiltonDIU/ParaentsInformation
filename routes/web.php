@@ -34,7 +34,7 @@ Route::get('/', [FrontendController::class,'index'])->name('home');
 Route::get('/a-to-z', [FrontendController::class,'aToZ'])->name('aToZ');
 //after login
 Route::get('/newsfeed', [HomeController::class,'newsfeed'])->name('newsfeed');
-Route::get('/newsfeed/{id}/', [HomeController::class,'newsfeedDetails'])->name('newsfeed-details');
+Route::get('/newsfeed/{id}/{title}', [HomeController::class,'newsfeedDetails'])->name('newsfeed-details');
 Route::get('/profile', [HomeController::class,'profile'])->name('profile');
 Route::get('/feedback', [HomeController::class,'feedback'])->name('feedback');
 

@@ -81,7 +81,10 @@
 
                             <div class="news_feed_text">
                                 {!! $news->content !!}
-                                <a href="{{$news->external_link}}" class="read_more_text">{{$news->external_link_text}}</a></div>
+                                @if("#"!=$news->external_link and $news->external_link!=null)
+                                    <a href="{{$news->external_link}}" class="read_more_text">{{$news->external_link_text}}</a>
+                                @endif
+                            </div>
                         </div>
 
                     </div>

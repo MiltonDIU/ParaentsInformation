@@ -20,7 +20,7 @@ class HomeController extends Controller
         return view('home');
     }
     public function newsfeed(){
-        $newsLetters = NewsLetter::where('is_active','1')->get();
+        $newsLetters = NewsLetter::where('is_active','1')->orderBy('id','desc')->get();
         return view('theme.newsfeed', compact('newsLetters'));
     }
 

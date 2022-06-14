@@ -31,7 +31,9 @@ class NewsLetter extends Model implements HasMedia
     {
         parent::__construct($attributes);
         self::created(function (NewsLetter $newsLetter) {
+
             $subscribers = User::where('if_notification','1')->where('verified','1')->where('approved','1')->get();
+          ;
             foreach ($subscribers as $key=> $newsLetter){
                 $newsLetter->notify(new NewsLetterNotify($newsLetter));
             }

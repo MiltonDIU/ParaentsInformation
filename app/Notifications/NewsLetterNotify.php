@@ -43,9 +43,8 @@ class NewsLetterNotify extends Notification
     {
         return (new MailMessage)
             ->subject('Hello, DIU parents portal')
-            ->line('Higgs boson has published a new article')
-            ->line('Post title : '.$this->newsLetter->title)
-            ->action('Read More' , url(route('newsfeed-details' , $this->newsLetter->id)))
+            ->line("Post title : $this->newsLetter->title")
+            ->action('Read More' , route('newsfeed-details',[$this->newsLetter->id,$this->newsLetter->title??"newsletter"]))
             ->line('Thank you for being with us!');
     }
 

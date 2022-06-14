@@ -153,9 +153,9 @@
                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
             },
             params: {
-                size: 3,
-                width: 4096,
-                height: 4096
+                size: 5,
+                // width: 4096,
+                // height: 4096
             },
             success: function (file, response) {
                 $('form').append('<input type="hidden" name="picture[]" value="' + response.name + '">')
